@@ -1,0 +1,15 @@
+header.header
+  include ../../components/menu
+  .container
+    .header-top
+      a.logo(href="index.html")
+        picture
+          source(type="image/webp" srcset="img/logo.webp 1x, srcset=img/logo@2x.webp 2x, srcset=img/logo@3x.webp 3x")
+          img(src="img/logo.png" srcset="img/logo@2x.png 2x, img/logo@3x.png 3x" alt="Пан Фільтрон")
+    .header-main
+      .header-main__img
+        picture
+          source(type="image/webp" srcset="img/5classic@2x.webp 1x, srcset=img/5classic@3x.webp 2x")
+          img(src="img/5classic@2x.png" srcset="img/5classic@3x.png 3x" alt="5 ступеневий зворотній осмос")
+      .header-main__order
+        include ../../components/header-form

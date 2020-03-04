@@ -1,0 +1,26 @@
+.header {
+  min-height: calc(100vh - 15px);
+
+  &-top {
+    padding: 15px 0;
+    text-align: center;
+  }
+
+  &-main {
+    display: flex;
+
+    &__img,
+    &__order {
+      width: 50%;
+    }
+
+    &__img {
+      flex: none;
+      text-align: center;
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}

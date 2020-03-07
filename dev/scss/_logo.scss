@@ -1,0 +1,658 @@
+.logo {
+  margin: 0 auto;
+  display: block;
+  width: 160px;
+  height: 145px;
+  background-color: #fff;
+  position: relative;
+  border-radius: 50%;
+
+  background: -webkit-linear-gradient(#E1E5EE 0%, #Fff 100%);
+    border: 1px solid #D1E4FA;
+    box-shadow: inset 0 1px 30px rgba(183,215,251,1);
+    &::before,
+  &::after {
+    content:'';
+    position: absolute;
+  }
+  &::before {
+    background: -webkit-linear-gradient(rgba(255,255,255,.3) 0%, rgba(255,255,255,0) 100%);
+    border-radius: 40px;
+		width: 60%;
+    height: 70px;
+    top: 15px;
+		left: 50%;
+		transform: translatex(-50%);
+    z-index: 2;
+  }
+  &::after {
+    border-radius: 50%;
+	left: 10%;	
+    bottom: 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    height: 125px;
+	width: 80%;
+    z-index: -1;
+  }
+}
+
+.logo {
+
+  &-text__block {
+    padding: 5px 0;
+    border-top: 2px solid darken($global-blue, 10%);
+    border-bottom: 2px solid darken($global-blue, 10%);
+    position: absolute;
+    width: 95%;
+    top: 50%;
+    left: 50%;
+      transform: translate(-50%,-50%);
+      letter-spacing: 1px;
+      color: darken($global-blue, 10%);
+      line-height: 14px;
+      white-space: nowrap;
+      &-title {
+        display: block;
+font-size: 14px;
+font-weight: 700;
+      }
+      &-descr {
+font-size: 12px;
+      }
+  }
+  
+  &__water {
+    &-wrap {
+      position: absolute;
+      width: 90%;
+      height: 90%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    // background-image: url("../img/water_bg.png");
+    // background-repeat: repeat-x;
+    background-color: #03a9f4;
+    animation: wave 4s ease-in-out infinite;
+  }
+
+  &__water-tap {
+    transform: rotatey(180deg);
+    position: relative;
+    z-index: 7;
+  }
+  &__water-drop {
+    position: absolute;
+    z-index: 6;
+    left: 35px;
+  }
+}
+
+.logo__water > div {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  padding-bottom: 100%;
+}
+
+.logo__water .bolha {
+  border-radius: 100%;
+  display: block;
+  z-index: 2;
+}
+
+.logo__water .bolha:nth-child(40) {
+  background-color: rgba(255, 255, 255, 0.64099315);
+  width: 5.70471449px;
+  height: 5.70471449px;
+  position: absolute;
+  left: 58.90052937%;
+  bottom: 0;
+  -webkit-animation: bolha 1.03404003s infinite linear;
+  -moz-animation: bolha 1.03404003s infinite linear;
+  animation: bolha 1.03404003s infinite linear;
+  -ms-animation: bolha 1.03404003s infinite linear;
+}
+
+.logo__water .bolha:nth-child(39) {
+  background-color: rgba(255, 255, 255, 0.78289943);
+  width: 4.88352523px;
+  height: 4.88352523px;
+  position: absolute;
+  left: 40.54378895%;
+  bottom: 0;
+  -webkit-animation: bolha 1.7066985s infinite linear;
+  -moz-animation: bolha 1.7066985s infinite linear;
+  animation: bolha 1.7066985s infinite linear;
+  -ms-animation: bolha 1.7066985s infinite linear;
+}
+
+.logo__water .bolha:nth-child(38) {
+  background-color: rgba(255, 255, 255, 0.84410842);
+  width: 4.21590857px;
+  height: 4.21590857px;
+  position: absolute;
+  left: 56.91081727%;
+  bottom: 0;
+  -webkit-animation: bolha 1.13810956s infinite linear;
+  -moz-animation: bolha 1.13810956s infinite linear;
+  animation: bolha 1.13810956s infinite linear;
+  -ms-animation: bolha 1.13810956s infinite linear;
+}
+
+.logo__water .bolha:nth-child(37) {
+  background-color: rgba(255, 255, 255, 0.18665132);
+  width: 2.17153773px;
+  height: 2.17153773px;
+  position: absolute;
+  left: 27.36520863%;
+  bottom: 0;
+  -webkit-animation: bolha 1.71488419s infinite linear;
+  -moz-animation: bolha 1.71488419s infinite linear;
+  animation: bolha 1.71488419s infinite linear;
+  -ms-animation: bolha 1.71488419s infinite linear;
+}
+
+.logo__water .bolha:nth-child(36) {
+  background-color: rgba(255, 255, 255, 0.57609239);
+  width: 3.93157946px;
+  height: 3.93157946px;
+  position: absolute;
+  left: 48.91001362%;
+  bottom: 0;
+  -webkit-animation: bolha 1.35135189s infinite linear;
+  -moz-animation: bolha 1.35135189s infinite linear;
+  animation: bolha 1.35135189s infinite linear;
+  -ms-animation: bolha 1.35135189s infinite linear;
+}
+
+.logo__water .bolha:nth-child(35) {
+  background-color: rgba(255, 255, 255, 0.34836358);
+  width: 3.52450749px;
+  height: 3.52450749px;
+  position: absolute;
+  left: 35.2333018%;
+  bottom: 0;
+  -webkit-animation: bolha 1.63158549s infinite linear;
+  -moz-animation: bolha 1.63158549s infinite linear;
+  animation: bolha 1.63158549s infinite linear;
+  -ms-animation: bolha 1.63158549s infinite linear;
+}
+
+.logo__water .bolha:nth-child(34) {
+  background-color: rgba(255, 255, 255, 0.35242887);
+  width: 4.95300205px;
+  height: 4.95300205px;
+  position: absolute;
+  left: 28.83594312%;
+  bottom: 0;
+  -webkit-animation: bolha 1.30531321s infinite linear;
+  -moz-animation: bolha 1.30531321s infinite linear;
+  animation: bolha 1.30531321s infinite linear;
+  -ms-animation: bolha 1.30531321s infinite linear;
+}
+
+.logo__water .bolha:nth-child(33) {
+  background-color: rgba(255, 255, 255, 0.2636823);
+  width: 4.06981287px;
+  height: 4.06981287px;
+  position: absolute;
+  left: 42.54779103%;
+  bottom: 0;
+  -webkit-animation: bolha 1.76560472s infinite linear;
+  -moz-animation: bolha 1.76560472s infinite linear;
+  animation: bolha 1.76560472s infinite linear;
+  -ms-animation: bolha 1.76560472s infinite linear;
+}
+
+.logo__water .bolha:nth-child(32) {
+  background-color: rgba(255, 255, 255, 0.29809534);
+  width: 5.39919193px;
+  height: 5.39919193px;
+  position: absolute;
+  left: 56.38245319%;
+  bottom: 0;
+  -webkit-animation: bolha 1.64759477s infinite linear;
+  -moz-animation: bolha 1.64759477s infinite linear;
+  animation: bolha 1.64759477s infinite linear;
+  -ms-animation: bolha 1.64759477s infinite linear;
+}
+
+.logo__water .bolha:nth-child(31) {
+  background-color: rgba(255, 255, 255, 0.39049669);
+  width: 2.97319962px;
+  height: 2.97319962px;
+  position: absolute;
+  left: 42.44577191%;
+  bottom: 0;
+  -webkit-animation: bolha 1.74808153s infinite linear;
+  -moz-animation: bolha 1.74808153s infinite linear;
+  animation: bolha 1.74808153s infinite linear;
+  -ms-animation: bolha 1.74808153s infinite linear;
+}
+
+.logo__water .bolha:nth-child(30) {
+  background-color: rgba(255, 255, 255, 0.53421302);
+  width: 3.56328129px;
+  height: 3.56328129px;
+  position: absolute;
+  left: 21.50079517%;
+  bottom: 0;
+  -webkit-animation: bolha 1.32047901s infinite linear;
+  -moz-animation: bolha 1.32047901s infinite linear;
+  animation: bolha 1.32047901s infinite linear;
+  -ms-animation: bolha 1.32047901s infinite linear;
+}
+
+.logo__water .bolha:nth-child(29) {
+  background-color: rgba(255, 255, 255, 0.49922349);
+  width: 5.38349409px;
+  height: 5.38349409px;
+  position: absolute;
+  left: 20.39136449%;
+  bottom: 0;
+  -webkit-animation: bolha 1.08146688s infinite linear;
+  -moz-animation: bolha 1.08146688s infinite linear;
+  animation: bolha 1.08146688s infinite linear;
+  -ms-animation: bolha 1.08146688s infinite linear;
+}
+
+.logo__water .bolha:nth-child(28) {
+  background-color: rgba(255, 255, 255, 0.22917925);
+  width: 2.27306179px;
+  height: 2.27306179px;
+  position: absolute;
+  left: 41.13429756%;
+  bottom: 0;
+  -webkit-animation: bolha 1.53932255s infinite linear;
+  -moz-animation: bolha 1.53932255s infinite linear;
+  animation: bolha 1.53932255s infinite linear;
+  -ms-animation: bolha 1.53932255s infinite linear;
+}
+
+.logo__water .bolha:nth-child(27) {
+  background-color: rgba(255, 255, 255, 0.19117818);
+  width: 3.21873121px;
+  height: 3.21873121px;
+  position: absolute;
+  left: 47.74282862%;
+  bottom: 0;
+  -webkit-animation: bolha 1.68765147s infinite linear;
+  -moz-animation: bolha 1.68765147s infinite linear;
+  animation: bolha 1.68765147s infinite linear;
+  -ms-animation: bolha 1.68765147s infinite linear;
+}
+
+.logo__water .bolha:nth-child(26) {
+  background-color: rgba(255, 255, 255, 0.29572282);
+  width: 3.30976967px;
+  height: 3.30976967px;
+  position: absolute;
+  left: 32.70112003%;
+  bottom: 0;
+  -webkit-animation: bolha 1.74491516s infinite linear;
+  -moz-animation: bolha 1.74491516s infinite linear;
+  animation: bolha 1.74491516s infinite linear;
+  -ms-animation: bolha 1.74491516s infinite linear;
+}
+
+.logo__water .bolha:nth-child(25) {
+  background-color: rgba(255, 255, 255, 0.82172512);
+  width: 3.31402476px;
+  height: 3.31402476px;
+  position: absolute;
+  left: 56.65228588%;
+  bottom: 0;
+  -webkit-animation: bolha 1.68630841s infinite linear;
+  -moz-animation: bolha 1.68630841s infinite linear;
+  animation: bolha 1.68630841s infinite linear;
+  -ms-animation: bolha 1.68630841s infinite linear;
+}
+
+.logo__water .bolha:nth-child(24) {
+  background-color: rgba(255, 255, 255, 0.19067717);
+  width: 4.31923366px;
+  height: 4.31923366px;
+  position: absolute;
+  left: 34.43755876%;
+  bottom: 0;
+  -webkit-animation: bolha 1.40052487s infinite linear;
+  -moz-animation: bolha 1.40052487s infinite linear;
+  animation: bolha 1.40052487s infinite linear;
+  -ms-animation: bolha 1.40052487s infinite linear;
+}
+
+.logo__water .bolha:nth-child(23) {
+  background-color: rgba(255, 255, 255, 0.20163711);
+  width: 4.47553179px;
+  height: 4.47553179px;
+  position: absolute;
+  left: 45.28852172%;
+  bottom: 0;
+  -webkit-animation: bolha 1.75200117s infinite linear;
+  -moz-animation: bolha 1.75200117s infinite linear;
+  animation: bolha 1.75200117s infinite linear;
+  -ms-animation: bolha 1.75200117s infinite linear;
+}
+
+.logo__water .bolha:nth-child(22) {
+  background-color: rgba(255, 255, 255, 0.37638366);
+  width: 2.93762006px;
+  height: 2.93762006px;
+  position: absolute;
+  left: 22.61951568%;
+  bottom: 0;
+  -webkit-animation: bolha 1.65007695s infinite linear;
+  -moz-animation: bolha 1.65007695s infinite linear;
+  animation: bolha 1.65007695s infinite linear;
+  -ms-animation: bolha 1.65007695s infinite linear;
+}
+
+.logo__water .bolha:nth-child(21) {
+  background-color: rgba(255, 255, 255, 0.73951714);
+  width: 2.36403175px;
+  height: 2.36403175px;
+  position: absolute;
+  left: 20.41823944%;
+  bottom: 0;
+  -webkit-animation: bolha 1.71341292s infinite linear;
+  -moz-animation: bolha 1.71341292s infinite linear;
+  animation: bolha 1.71341292s infinite linear;
+  -ms-animation: bolha 1.71341292s infinite linear;
+}
+
+.logo__water .bolha:nth-child(20) {
+  background-color: rgba(255, 255, 255, 0.74684256);
+  width: 4.28644116px;
+  height: 4.28644116px;
+  position: absolute;
+  left: 47.09497615%;
+  bottom: 0;
+  -webkit-animation: bolha 1.42741062s infinite linear;
+  -moz-animation: bolha 1.42741062s infinite linear;
+  animation: bolha 1.42741062s infinite linear;
+  -ms-animation: bolha 1.42741062s infinite linear;
+}
+
+.logo__water .bolha:nth-child(19) {
+  background-color: rgba(255, 255, 255, 0.39571717);
+  width: 2.30570834px;
+  height: 2.30570834px;
+  position: absolute;
+  left: 54.43412549%;
+  bottom: 0;
+  -webkit-animation: bolha 1.09319765s infinite linear;
+  -moz-animation: bolha 1.09319765s infinite linear;
+  animation: bolha 1.09319765s infinite linear;
+  -ms-animation: bolha 1.09319765s infinite linear;
+}
+
+.logo__water .bolha:nth-child(18) {
+  background-color: rgba(255, 255, 255, 0.11761463);
+  width: 3.16199432px;
+  height: 3.16199432px;
+  position: absolute;
+  left: 45.23312412%;
+  bottom: 0;
+  -webkit-animation: bolha 1.75816528s infinite linear;
+  -moz-animation: bolha 1.75816528s infinite linear;
+  animation: bolha 1.75816528s infinite linear;
+  -ms-animation: bolha 1.75816528s infinite linear;
+}
+
+.logo__water .bolha:nth-child(17) {
+  background-color: rgba(255, 255, 255, 0.55912109);
+  width: 2.0485191px;
+  height: 2.0485191px;
+  position: absolute;
+  left: 27.14917613%;
+  bottom: 0;
+  -webkit-animation: bolha 1.05712075s infinite linear;
+  -moz-animation: bolha 1.05712075s infinite linear;
+  animation: bolha 1.05712075s infinite linear;
+  -ms-animation: bolha 1.05712075s infinite linear;
+}
+
+.logo__water .bolha:nth-child(16) {
+  background-color: rgba(255, 255, 255, 0.8534273);
+  width: 3.84211602px;
+  height: 3.84211602px;
+  position: absolute;
+  left: 48.25079379%;
+  bottom: 0;
+  -webkit-animation: bolha 1.27029514s infinite linear;
+  -moz-animation: bolha 1.27029514s infinite linear;
+  animation: bolha 1.27029514s infinite linear;
+  -ms-animation: bolha 1.27029514s infinite linear;
+}
+
+.logo__water .bolha:nth-child(15) {
+  background-color: rgba(255, 255, 255, 0.18745404);
+  width: 4.48411003px;
+  height: 4.48411003px;
+  position: absolute;
+  left: 28.91229669%;
+  bottom: 0;
+  -webkit-animation: bolha 1.46135337s infinite linear;
+  -moz-animation: bolha 1.46135337s infinite linear;
+  animation: bolha 1.46135337s infinite linear;
+  -ms-animation: bolha 1.46135337s infinite linear;
+}
+
+.logo__water .bolha:nth-child(14) {
+  background-color: rgba(255, 255, 255, 0.39749283);
+  width: 3.65313891px;
+  height: 3.65313891px;
+  position: absolute;
+  left: 37.57374546%;
+  bottom: 0;
+  -webkit-animation: bolha 1.28419853s infinite linear;
+  -moz-animation: bolha 1.28419853s infinite linear;
+  animation: bolha 1.28419853s infinite linear;
+  -ms-animation: bolha 1.28419853s infinite linear;
+}
+
+.logo__water .bolha:nth-child(13) {
+  background-color: rgba(255, 255, 255, 0.71420396);
+  width: 5.43450035px;
+  height: 5.43450035px;
+  position: absolute;
+  left: 18.66876192%;
+  bottom: 0;
+  -webkit-animation: bolha 1.25885464s infinite linear;
+  -moz-animation: bolha 1.25885464s infinite linear;
+  animation: bolha 1.25885464s infinite linear;
+  -ms-animation: bolha 1.25885464s infinite linear;
+}
+
+.logo__water .bolha:nth-child(12) {
+  background-color: rgba(255, 255, 255, 0.25480444);
+  width: 3.96930204px;
+  height: 3.96930204px;
+  position: absolute;
+  left: 37.21098355%;
+  bottom: 0;
+  -webkit-animation: bolha 1.32465862s infinite linear;
+  -moz-animation: bolha 1.32465862s infinite linear;
+  animation: bolha 1.32465862s infinite linear;
+  -ms-animation: bolha 1.32465862s infinite linear;
+}
+
+.logo__water .bolha:nth-child(11) {
+  background-color: rgba(255, 255, 255, 0.35428211);
+  width: 3.77563419px;
+  height: 3.77563419px;
+  position: absolute;
+  left: 53.80130851%;
+  bottom: 0;
+  -webkit-animation: bolha 1.01498552s infinite linear;
+  -moz-animation: bolha 1.01498552s infinite linear;
+  animation: bolha 1.01498552s infinite linear;
+  -ms-animation: bolha 1.01498552s infinite linear;
+}
+
+.logo__water .bolha:nth-child(10) {
+  background-color: rgba(255, 255, 255, 0.61866903);
+  width: 3.74821928px;
+  height: 3.74821928px;
+  position: absolute;
+  left: 19.30512359%;
+  bottom: 0;
+  -webkit-animation: bolha 1.63228458s infinite linear;
+  -moz-animation: bolha 1.63228458s infinite linear;
+  animation: bolha 1.63228458s infinite linear;
+  -ms-animation: bolha 1.63228458s infinite linear;
+}
+
+.logo__water .bolha:nth-child(9) {
+  background-color: rgba(255, 255, 255, 0.80646596);
+  width: 5.8844723px;
+  height: 5.8844723px;
+  position: absolute;
+  left: 35.97764356%;
+  bottom: 0;
+  -webkit-animation: bolha 1.34120852s infinite linear;
+  -moz-animation: bolha 1.34120852s infinite linear;
+  animation: bolha 1.34120852s infinite linear;
+  -ms-animation: bolha 1.34120852s infinite linear;
+}
+
+.logo__water .bolha:nth-child(8) {
+  background-color: rgba(255, 255, 255, 0.52732418);
+  width: 3.76318394px;
+  height: 3.76318394px;
+  position: absolute;
+  left: 47.16555502%;
+  bottom: 0;
+  -webkit-animation: bolha 1.1943425s infinite linear;
+  -moz-animation: bolha 1.1943425s infinite linear;
+  animation: bolha 1.1943425s infinite linear;
+  -ms-animation: bolha 1.1943425s infinite linear;
+}
+
+.logo__water .bolha:nth-child(7) {
+  background-color: rgba(255, 255, 255, 0.49644105);
+  width: 3.87608817px;
+  height: 3.87608817px;
+  position: absolute;
+  left: 24.31213812%;
+  bottom: 0;
+  -webkit-animation: bolha 1.57130133s infinite linear;
+  -moz-animation: bolha 1.57130133s infinite linear;
+  animation: bolha 1.57130133s infinite linear;
+  -ms-animation: bolha 1.57130133s infinite linear;
+}
+
+.logo__water .bolha:nth-child(6) {
+  background-color: rgba(255, 255, 255, 0.33402272);
+  width: 3.68430973px;
+  height: 3.68430973px;
+  position: absolute;
+  left: 24.29288463%;
+  bottom: 0;
+  -webkit-animation: bolha 1.00354552s infinite linear;
+  -moz-animation: bolha 1.00354552s infinite linear;
+  animation: bolha 1.00354552s infinite linear;
+  -ms-animation: bolha 1.00354552s infinite linear;
+}
+
+.logo__water .bolha:nth-child(5) {
+  background-color: rgba(255, 255, 255, 0.42236751);
+  width: 2.68477234px;
+  height: 2.68477234px;
+  position: absolute;
+  left: 20.84079803%;
+  bottom: 0;
+  -webkit-animation: bolha 1.14528802s infinite linear;
+  -moz-animation: bolha 1.14528802s infinite linear;
+  animation: bolha 1.14528802s infinite linear;
+  -ms-animation: bolha 1.14528802s infinite linear;
+}
+
+.logo__water .bolha:nth-child(4) {
+  background-color: rgba(255, 255, 255, 0.60696101);
+  width: 2.66928486px;
+  height: 2.66928486px;
+  position: absolute;
+  left: 19.23705371%;
+  bottom: 0;
+  -webkit-animation: bolha 1.77325361s infinite linear;
+  -moz-animation: bolha 1.77325361s infinite linear;
+  animation: bolha 1.77325361s infinite linear;
+  -ms-animation: bolha 1.77325361s infinite linear;
+}
+
+.logo__water .bolha:nth-child(3) {
+  background-color: rgba(255, 255, 255, 0.37959297);
+  width: 4.21133435px;
+  height: 4.21133435px;
+  position: absolute;
+  left: 48.89554928%;
+  bottom: 0;
+  -webkit-animation: bolha 1.33263542s infinite linear;
+  -moz-animation: bolha 1.33263542s infinite linear;
+  animation: bolha 1.33263542s infinite linear;
+  -ms-animation: bolha 1.33263542s infinite linear;
+}
+
+.logo__water .bolha:nth-child(2) {
+  background-color: rgba(255, 255, 255, 0.37877052);
+  width: 3.13983295px;
+  height: 3.13983295px;
+  position: absolute;
+  left: 37.34833223%;
+  bottom: 0;
+  -webkit-animation: bolha 1.69746035s infinite linear;
+  -moz-animation: bolha 1.69746035s infinite linear;
+  animation: bolha 1.69746035s infinite linear;
+  -ms-animation: bolha 1.69746035s infinite linear;
+}
+
+.logo__water .bolha:nth-child(1) {
+  background-color: rgba(255, 255, 255, 0.77571598);
+  width: 4.47244452px;
+  height: 4.47244452px;
+  position: absolute;
+  left: 27.54414768%;
+  bottom: 0;
+  -webkit-animation: bolha 1.7098277s infinite linear;
+  -moz-animation: bolha 1.7098277s infinite linear;
+  animation: bolha 1.7098277s infinite linear;
+  -ms-animation: bolha 1.7098277s infinite linear;
+}
+
+// @keyframes serveja {
+//   to {
+//     background-position: 1051px 0;
+//   }
+// }
+
+@keyframes bolha {
+  to {
+    bottom: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes wave {
+
+  0%,
+  100% {
+    clip-path: polygon(0% 59%, 6% 64%, 12% 68%, 19% 69%, 28% 69%, 38% 68%, 46% 65%, 53% 59%, 59% 52%, 67% 46%, 76% 41%, 84% 40%, 94% 39%, 100% 39%, 100% 100%, 0 100%);
+  }
+
+  50% {
+    clip-path: polygon(0% 59%, 7% 53%, 14% 47%, 22% 40%, 32% 41%, 39% 44%, 46% 52%, 52% 59%, 56% 65%, 64% 72%, 72% 74%, 82% 75%, 91% 69%, 100% 59%, 100% 100%, 0 100%);
+
+
+  }
+}

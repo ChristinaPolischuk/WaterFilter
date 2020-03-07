@@ -444,4 +444,47 @@ $(function () {
     _button.liquidButton = new LiquidButton(_button);
   }
 
+  //water drop animation
+
+  // var pathLength_1 = 22; // distance fromm the initial position to the pos. the drop beginns his free fall
+  var pathLength_1 = 15; // distance fromm the initial position to the pos. the drop beginns his free fall
+  var durrationDropAccumulates = 5000; // time in ms the drop accumulates
+  var dropAccumulatesSpeed = pathLength_1 / durrationDropAccumulates;
+
+  // var durrationFreeFall = 500; // time of free fall
+  var durrationFreeFall = 500; // time of free fall
+  var pathLength_2 = 145; // distance of free fall 
+  var freeFallAcceleration = ((pathLength_2 - (dropAccumulatesSpeed * durrationFreeFall)) * 2) / (durrationFreeFall * durrationFreeFall);
+
+  var start = null;
+  var element = document.getElementById('drop');
+  window.requestAnimationFrame(step);
+
+
+  function step(timestamp) {
+    if (!start) start = timestamp;
+    var progress = timestamp - start;
+
+    if (progress < durrationDropAccumulates) {
+      5
+      pos = progress * dropAccumulatesSpeed;
+      // formular uniform motion
+      element.setAttribute("transform", "translate(0," + pos + ")");
+      window.requestAnimationFrame(step);
+    }
+    if (progress >= durrationDropAccumulates && progress < (durrationDropAccumulates + durrationFreeFall)) {
+      progress2 = progress - 5000;
+      // formular free fall with initial speed and inital offset
+      pos = pathLength_1 + (progress2 * dropAccumulatesSpeed) + (0.5 * freeFallAcceleration * progress2 * progress2);
+      console.log(progress2 + " -> " + pos);
+      element.setAttribute("transform", "translate(0," + pos + ")");
+      window.requestAnimationFrame(step);
+    }
+    if (progress >= (durrationDropAccumulates + durrationFreeFall)) {
+      start = null;
+      window.requestAnimationFrame(step);
+    }
+  }
+
+
 });

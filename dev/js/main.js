@@ -77,7 +77,7 @@ $(function () {
 
     hamburger.css('transform', 'translate(' + curveX + 'px, ' + curveY + 'px)');
 
-    $('h2').css('transform', 'translateY(' + curveY + 'px)');
+    // $('h2').css('transform', 'translateY(' + curveY + 'px)');
     window.requestAnimationFrame(svgCurve);
   }
 

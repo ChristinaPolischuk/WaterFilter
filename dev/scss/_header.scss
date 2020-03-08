@@ -1,8 +1,9 @@
 .header {
-  min-height: calc(100vh - 15px);
+  padding-left: 60px;
+  min-height: calc(100vh - 45px);
 
   &-top {
-    padding: 15px 0;
+    padding: 15px 0 30px;
     text-align: center;
   }
 
@@ -17,10 +18,22 @@
     &__img {
       flex: none;
       text-align: center;
+      position: relative;
+      z-index: 1;
 
       img {
         max-width: 100%;
       }
+    }
+
+    &__price {
+      white-space: nowrap;
+      color: darken($global-blue, 10%);
+      font-size: 50px;
+      font-weight: 700;
+      position: absolute;
+      right: 100px;
+      bottom: 30px;
     }
   }
 }

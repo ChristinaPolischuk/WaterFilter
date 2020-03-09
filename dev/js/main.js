@@ -486,5 +486,10 @@ $(function () {
     }
   }
 
+  $('input').on('change', function () {
+    if ($(this).val() != '') $(this).parent().addClass('filled-out');
+    else $(this).parent().removeClass('filled-out');
+  });
+
 
 });

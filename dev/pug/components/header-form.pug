@@ -10,6 +10,7 @@
         span м
         span '
         span я
+      .form-group__error
     .form-group
       input#surname(type="text", name="")
       label(for="surname")
@@ -21,6 +22,7 @@
         span и
         span щ
         span е
+      .form-group__error
     .form-group
       input#email(type="text", name="")
       label(for="email")
@@ -30,6 +32,7 @@
         span a
         span i
         span l
+      .form-group__error
     .form-group
       input#phone(type="text", name="")
       label(for="phone")
@@ -40,6 +43,8 @@
         span ф
         span о
         span н
+      .form-group__error
     .form-submit-btn-wrapper
       //- input.form-submit-btn(type="button", name="" value="Відправити")
-      <svg class="form-submit-btn liquid-button"></svg>
+      button.form-submit-btn(type="submit") Відправити
+        //- <svg class="liquid-button"></svg>

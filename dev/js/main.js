@@ -647,7 +647,7 @@ $(function() {
         pathLength_1 +
         progress2 * dropAccumulatesSpeed +
         0.5 * freeFallAcceleration * progress2 * progress2;
-      console.log(progress2 + " -> " + pos);
+      // console.log(progress2 + " -> " + pos);
       element.setAttribute("transform", "translate(0," + pos + ")");
       window.requestAnimationFrame(step);
     }

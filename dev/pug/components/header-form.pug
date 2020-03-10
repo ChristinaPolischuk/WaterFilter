@@ -4,27 +4,27 @@
     .form-title Замовити
   form
     .form-group
-      input#name(type="text", name="")
+      input#name(type="text", name="name")
       label(for="name")
         span І
         span м
         span '
         span я
       .form-group__error
+    //- .form-group
+    //-   input#surname(type="text", name="surname")
+    //-   label(for="surname")
+    //-     span П
+    //-     span р
+    //-     span і
+    //-     span з
+    //-     span в
+    //-     span и
+    //-     span щ
+    //-     span е
+    //-   .form-group__error
     .form-group
-      input#surname(type="text", name="")
-      label(for="surname")
-        span П
-        span р
-        span і
-        span з
-        span в
-        span и
-        span щ
-        span е
-      .form-group__error
-    .form-group
-      input#email(type="text", name="")
+      input#email(type="text", name="email")
       label(for="email")
         span E
         span -
@@ -34,7 +34,7 @@
         span l
       .form-group__error
     .form-group
-      input#phone(type="text", name="")
+      input#phone(type="text", name="phone" maxlength="18")
       label(for="phone")
         span Т
         span е
@@ -46,5 +46,5 @@
       .form-group__error
     .form-submit-btn-wrapper
       //- input.form-submit-btn(type="button", name="" value="Відправити")
-      button.form-submit-btn(type="submit") Відправити
-        //- <svg class="liquid-button"></svg>
+      button.form-submit-btn(type="submit")
+        <svg class="liquid-button"></svg>

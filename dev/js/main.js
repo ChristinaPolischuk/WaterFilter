@@ -852,18 +852,19 @@ $(function() {
         type: "post",
         data: $(this).serialize(),
 
-        beforeSend: function(xhr, textStatus) {
+        beforeSend: function() {
           $(".form form :input").attr("disabled", "disabled");
         },
 
-        success: function(response) {
+        success: function() {
           $(".form form :input").removeAttr("disabled");
           $(".form form :text")
             .val("")
             .removeClass()
             .next(".form-group__error")
             .text("");
-          alert(response);
+          // alert(response);
+          $(".popup").show();
         }
       }); // end ajax({...})
     }

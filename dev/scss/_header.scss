@@ -1,6 +1,7 @@
 .header {
   padding-left: 60px;
   min-height: calc(100vh - 45px);
+  overflow-x: hidden;
 
   &-top {
     padding: 15px 0 30px;
@@ -34,6 +35,10 @@
       position: absolute;
       right: 100px;
       bottom: 30px;
+    }
+
+    &__order {
+      position: relative;
     }
   }
 }

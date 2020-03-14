@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
   //menu
   var height = window.innerHeight,
     x = 0,
@@ -11,23 +11,23 @@ $(function() {
     menuExpanded = false;
 
   (blob = $("#blob")),
-    (blobPath = $("#blob-path")),
-    (hamburger = $(".menu-hamburger"));
+  (blobPath = $("#blob-path")),
+  (hamburger = $(".menu-hamburger"));
 
-  $(this).on("mousemove", function(e) {
+  $(this).on("mousemove", function (e) {
     x = e.pageX;
 
     y = e.pageY;
   });
 
-  $(".menu-hamburger, .menu-inner").on("click", function() {
+  $(".menu-hamburger, .menu-inner").on("click", function () {
     $(this)
       .parent()
       .addClass("expanded");
     menuExpanded = true;
   });
 
-  $(".menu-inner").on("mouseleave", function() {
+  $(".menu-inner").on("mouseleave", function () {
     menuExpanded = false;
     $(this)
       .parent()
@@ -42,7 +42,7 @@ $(function() {
   ) {
     return (
       changeInValue *
-        (-Math.pow(2, (-10 * currentIteration) / totalIterations) + 1) +
+      (-Math.pow(2, (-10 * currentIteration) / totalIterations) + 1) +
       startValue
     );
   }
@@ -152,7 +152,7 @@ $(function() {
     return Constructor;
   }
 
-  var LiquidButton = /*#__PURE__*/ (function() {
+  var LiquidButton = /*#__PURE__*/ (function () {
     function LiquidButton(svg) {
       _classCallCheck(this, LiquidButton);
 
@@ -174,8 +174,7 @@ $(function() {
       this.textColor = options.textColor || "#FFFFFF";
       this.text = options.text || "Відправити";
       this.svg = svg;
-      this.layers = [
-        {
+      this.layers = [{
           points: [],
           viscosity: 0.5,
           mouseForce: 100,
@@ -233,8 +232,7 @@ $(function() {
       this.animate();
     }
 
-    _createClass(LiquidButton, [
-      {
+    _createClass(LiquidButton, [{
         key: "distance",
         value: function distance(p1, p2) {
           return Math.sqrt(Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2));
@@ -244,9 +242,7 @@ $(function() {
         key: "update",
         value: function update() {
           for (
-            var layerIndex = 0;
-            layerIndex < this.layers.length;
-            layerIndex++
+            var layerIndex = 0; layerIndex < this.layers.length; layerIndex++
           ) {
             var layer = this.layers[layerIndex];
             var points = layer.points;
@@ -261,9 +257,7 @@ $(function() {
               point.vy += f * (dy / d || 0);
 
               for (
-                var touchIndex = 0;
-                touchIndex < this.touches.length;
-                touchIndex++
+                var touchIndex = 0; touchIndex < this.touches.length; touchIndex++
               ) {
                 var touch = this.touches[touchIndex];
                 var mouseForce = layer.mouseForce;
@@ -295,9 +289,7 @@ $(function() {
             }
 
             for (
-              var _pointIndex = 0;
-              _pointIndex < points.length;
-              _pointIndex++
+              var _pointIndex = 0; _pointIndex < points.length; _pointIndex++
             ) {
               var prev =
                 points[(_pointIndex + points.length - 1) % points.length];
@@ -328,7 +320,7 @@ $(function() {
         value: function animate() {
           var _this = this;
 
-          this.raf(function() {
+          this.raf(function () {
             _this.update();
 
             _this.draw();
@@ -341,9 +333,7 @@ $(function() {
         key: "draw",
         value: function draw() {
           for (
-            var layerIndex = 0;
-            layerIndex < this.layers.length;
-            layerIndex++
+            var layerIndex = 0; layerIndex < this.layers.length; layerIndex++
           ) {
             var layer = this.layers[layerIndex];
 
@@ -354,9 +344,7 @@ $(function() {
                 }
 
                 for (
-                  var touchIndex = 0;
-                  touchIndex < this.touches.length;
-                  touchIndex++
+                  var touchIndex = 0; touchIndex < this.touches.length; touchIndex++
                 ) {
                   var touch = this.touches[touchIndex];
                   var gradient = document.createElementNS(
@@ -390,9 +378,7 @@ $(function() {
             commands.push("M", points[0].x, points[0].y);
 
             for (
-              var pointIndex = 1;
-              pointIndex < points.length;
-              pointIndex += 1
+              var pointIndex = 1; pointIndex < points.length; pointIndex += 1
             ) {
               commands.push(
                 "C",
@@ -433,44 +419,36 @@ $(function() {
           this.svg.setAttribute("height", this.svgHeight);
 
           for (
-            var layerIndex = 0;
-            layerIndex < this.layers.length;
-            layerIndex++
+            var layerIndex = 0; layerIndex < this.layers.length; layerIndex++
           ) {
             var layer = this.layers[layerIndex];
             var points = [];
 
             for (
-              var x = ~~(this.height / 2);
-              x < this.width - ~~(this.height / 2);
-              x += this.gap
+              var x = ~~(this.height / 2); x < this.width - ~~(this.height / 2); x += this.gap
             ) {
               points.push(this.createPoint(x + this.margin, this.margin));
             }
 
             for (
-              var alpha = ~~(this.height * 1.25);
-              alpha >= 0;
-              alpha -= this.gap
+              var alpha = ~~(this.height * 1.25); alpha >= 0; alpha -= this.gap
             ) {
               var angle = (Math.PI / ~~(this.height * 1.25)) * alpha;
               points.push(
                 this.createPoint(
                   (Math.sin(angle) * this.height) / 2 +
-                    this.margin +
-                    this.width -
-                    this.height / 2,
+                  this.margin +
+                  this.width -
+                  this.height / 2,
                   (Math.cos(angle) * this.height) / 2 +
-                    this.margin +
-                    this.height / 2
+                  this.margin +
+                  this.height / 2
                 )
               );
             }
 
             for (
-              var _x = this.width - ~~(this.height / 2) - 1;
-              _x >= ~~(this.height / 2);
-              _x -= this.gap
+              var _x = this.width - ~~(this.height / 2) - 1; _x >= ~~(this.height / 2); _x -= this.gap
             ) {
               points.push(
                 this.createPoint(_x + this.margin, this.margin + this.height)
@@ -478,21 +456,19 @@ $(function() {
             }
 
             for (
-              var _alpha = 0;
-              _alpha <= ~~(this.height * 1.25);
-              _alpha += this.gap
+              var _alpha = 0; _alpha <= ~~(this.height * 1.25); _alpha += this.gap
             ) {
               var _angle = (Math.PI / ~~(this.height * 1.25)) * _alpha;
 
               points.push(
                 this.createPoint(
                   this.height -
-                    (Math.sin(_angle) * this.height) / 2 +
-                    this.margin -
-                    this.height / 2,
+                  (Math.sin(_angle) * this.height) / 2 +
+                  this.margin -
+                  this.height / 2,
                   (Math.cos(_angle) * this.height) / 2 +
-                    this.margin +
-                    this.height / 2
+                  this.margin +
+                  this.height / 2
                 )
               );
             }
@@ -506,14 +482,12 @@ $(function() {
         get: function get() {
           var _this2 = this;
 
-          return function(e) {
-            _this2.touches = [
-              {
-                x: e.offsetX,
-                y: e.offsetY,
-                force: 1
-              }
-            ];
+          return function (e) {
+            _this2.touches = [{
+              x: e.offsetX,
+              y: e.offsetY,
+              force: 1
+            }];
           };
         }
       },
@@ -522,15 +496,13 @@ $(function() {
         get: function get() {
           var _this3 = this;
 
-          return function(e) {
+          return function (e) {
             _this3.touches = [];
 
             var rect = _this3.svg.getBoundingClientRect();
 
             for (
-              var touchIndex = 0;
-              touchIndex < e.changedTouches.length;
-              touchIndex++
+              var touchIndex = 0; touchIndex < e.changedTouches.length; touchIndex++
             ) {
               var touch = e.changedTouches[touchIndex];
               var x = touch.pageX - rect.left;
@@ -559,7 +531,7 @@ $(function() {
         get: function get() {
           var _this4 = this;
 
-          return function(e) {
+          return function (e) {
             _this4.touches = [];
           };
         }
@@ -573,7 +545,7 @@ $(function() {
               window.requestAnimationFrame ||
               window.webkitRequestAnimationFrame ||
               window.mozRequestAnimationFrame ||
-              function(callback) {
+              function (callback) {
                 setTimeout(callback, 10);
               }
             ).bind(window))
@@ -657,18 +629,27 @@ $(function() {
     }
   }
 
+  function popupSuccess() {
+    $('.header-main__order').addClass('popup-open');
+    var popupSuccessClose = function () {
+      $('.header-main__order').removeClass('popup-open');
+      location.reload();
+    }
+    setTimeout(popupSuccessClose, 9000);
+  }
+
   // Устанавливаем обработчик потери фокуса для всех полей ввода текста
   $("input#name, input#surname, input#email, input#phone")
     .unbind()
-    .blur(function() {
+    .blur(function () {
       if ($(this).val() != "")
         $(this)
-          .parent()
-          .addClass("filled-out");
+        .parent()
+        .addClass("filled-out");
       else
         $(this)
-          .parent()
-          .removeClass("filled-out");
+        .parent()
+        .removeClass("filled-out");
 
       // Для удобства записываем обращения к атрибуту и значению каждого поля в переменные
       var id = $(this).attr("id");
@@ -692,14 +673,12 @@ $(function() {
               .nextAll(".form-group__error")
               .text("Прийнято")
               .css("color", "#0286c2")
-              .animate(
-                {
+              .animate({
                   paddingLeft: "10px"
                 },
                 400
               )
-              .animate(
-                {
+              .animate({
                   paddingLeft: "5px"
                 },
                 400
@@ -716,14 +695,12 @@ $(function() {
               .nextAll(".form-group__error")
               .text("Введіть, будь ласка ваше ім'я")
               .css("color", "red")
-              .animate(
-                {
+              .animate({
                   paddingLeft: "10px"
                 },
                 400
               )
-              .animate(
-                {
+              .animate({
                   paddingLeft: "5px"
                 },
                 400
@@ -731,7 +708,7 @@ $(function() {
           }
           break;
 
-        // Проверка email
+          // Проверка email
         case "email":
           var rv_email = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
           if (val != "" && rv_email.test(val)) {
@@ -740,14 +717,12 @@ $(function() {
               .nextAll(".form-group__error")
               .text("Прийнято")
               .css("color", "#0286c2")
-              .animate(
-                {
+              .animate({
                   paddingLeft: "10px"
                 },
                 400
               )
-              .animate(
-                {
+              .animate({
                   paddingLeft: "5px"
                 },
                 400
@@ -760,14 +735,12 @@ $(function() {
               .nextAll(".form-group__error")
               .text("Введіть, будь ласка, ваш e-mail")
               .css("color", "red")
-              .animate(
-                {
+              .animate({
                   paddingLeft: "10px"
                 },
                 400
               )
-              .animate(
-                {
+              .animate({
                   paddingLeft: "5px"
                 },
                 400
@@ -775,7 +748,7 @@ $(function() {
           }
           break;
 
-        // Проверка поля "Телефон"
+          // Проверка поля "Телефон"
         case "phone":
           if (val == "") return;
           var rv_phone = /^(\+)?(\(\d{2,3}\) ?\d|\d)(([ \-]?\d)|( ?\(\d{2,3}\) ?)){5,12}\d$/; // используем регулярное выражение
@@ -792,14 +765,12 @@ $(function() {
               .nextAll(".form-group__error")
               .text("Прийнято")
               .css("color", "#0286c2")
-              .animate(
-                {
+              .animate({
                   paddingLeft: "10px"
                 },
                 400
               )
-              .animate(
-                {
+              .animate({
                   paddingLeft: "5px"
                 },
                 400
@@ -816,14 +787,12 @@ $(function() {
               .nextAll(".form-group__error")
               .text("Введіть, будь ласка ваш телефон")
               .css("color", "red")
-              .animate(
-                {
+              .animate({
                   paddingLeft: "10px"
                 },
                 400
               )
-              .animate(
-                {
+              .animate({
                   paddingLeft: "5px"
                 },
                 400
@@ -834,7 +803,7 @@ $(function() {
     }); // end blur()
 
   // Теперь отправим наше письмо с помощью AJAX
-  $(".form form").submit(function(e) {
+  $(".form form").submit(function (e) {
     // Запрещаем стандартное поведение для кнопки submit
     e.preventDefault();
 
@@ -852,11 +821,11 @@ $(function() {
         type: "post",
         data: $(this).serialize(),
 
-        beforeSend: function() {
+        beforeSend: function () {
           $(".form form :input").attr("disabled", "disabled");
         },
 
-        success: function() {
+        success: function () {
           $(".form form :input").removeAttr("disabled");
           $(".form form :text")
             .val("")
@@ -864,7 +833,7 @@ $(function() {
             .next(".form-group__error")
             .text("");
           // alert(response);
-          $(".popup").show();
+          popupSuccess();
         }
       }); // end ajax({...})
     }

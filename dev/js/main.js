@@ -1,7 +1,7 @@
 $(function () {
   //menu
-  // var height = window.innerHeight,
-  var height = document.body.offsetHeight,
+  var height = window.innerHeight,
+    // var height = document.body.offsetHeight,
     x = 0,
     y = height / 2,
     curveX = 10,

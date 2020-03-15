@@ -1,6 +1,7 @@
 $(function () {
   //menu
-  var height = window.innerHeight,
+  // var height = window.innerHeight,
+  var height = document.body.offsetHeight,
     x = 0,
     y = height / 2,
     curveX = 10,
@@ -15,9 +16,11 @@ $(function () {
   (hamburger = $(".menu-hamburger"));
 
   $(this).on("mousemove", function (e) {
-    x = e.pageX;
+    // x = e.pageX;
+    x = e.clientX;
 
-    y = e.pageY;
+    // y = e.pageY;
+    y = e.clientY;
   });
 
   $(".menu-hamburger, .menu-inner").on("click", function () {
@@ -635,7 +638,7 @@ $(function () {
       $('.header-main__order').removeClass('popup-open');
       location.reload();
     }
-    // setTimeout(popupSuccessClose, 7000);
+    setTimeout(popupSuccessClose, 7000);
   }
 
   // Устанавливаем обработчик потери фокуса для всех полей ввода текста

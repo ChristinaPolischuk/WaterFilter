@@ -1,5 +1,5 @@
 .header {
-  padding-left: 60px;
+  padding-left: 50px;
   min-height: calc(100vh - 45px);
   overflow-x: hidden;
 
@@ -10,6 +10,7 @@
 
   &-main {
     display: flex;
+    align-items: flex-start;
 
     &__img,
     &__order {
@@ -27,14 +28,19 @@
       }
     }
 
+    &__order {
+      padding-top: 30px;
+      border: 1px solid #000;
+    }
+
     &__price {
       white-space: nowrap;
-      color: darken($global-blue, 10%);
+      color: $text-color;
       font-size: 50px;
       font-weight: 700;
       position: absolute;
       right: 100px;
-      bottom: 30px;
+      bottom: 0;
     }
 
     &__order {

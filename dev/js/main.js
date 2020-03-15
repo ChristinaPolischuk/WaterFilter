@@ -635,7 +635,7 @@ $(function () {
       $('.header-main__order').removeClass('popup-open');
       location.reload();
     }
-    setTimeout(popupSuccessClose, 9000);
+    setTimeout(popupSuccessClose, 7000);
   }
 
   // Устанавливаем обработчик потери фокуса для всех полей ввода текста
@@ -750,7 +750,7 @@ $(function () {
 
           // Проверка поля "Телефон"
         case "phone":
-          if (val == "") return;
+          // if (val == "") return;
           var rv_phone = /^(\+)?(\(\d{2,3}\) ?\d|\d)(([ \-]?\d)|( ?\(\d{2,3}\) ?)){5,12}\d$/; // используем регулярное выражение
 
           // Eсли длина имени больше 2 символов, оно не пустое и удовлетворяет рег. выражению,

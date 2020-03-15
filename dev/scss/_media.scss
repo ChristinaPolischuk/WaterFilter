@@ -1,0 +1,51 @@
+@media screen and (max-width: 1440px) {
+  .form {
+
+    &-title {
+      font-size: 3em;
+
+      &::before {
+        top: 45px;
+        left: 7px;
+      }
+    }
+
+    form {
+      margin-top: 17px;
+    }
+  }
+
+  .header-main {
+    &__price {
+      right: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 1052px) {
+  .form {
+    &-group__error {
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+  }
+
+  .header-main {
+    display: block;
+
+    &__img,
+    &__order {
+      width: 100%;
+    }
+
+    &__img {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .form {
+    width: 90%;
+  }
+}

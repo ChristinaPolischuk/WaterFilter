@@ -163,7 +163,7 @@ $(function () {
       this.tension = options.tension * 1 || 0.4;
       this.width = options.width * 1 || 200;
       this.height = options.height * 1 || 50;
-      this.margin = options.margin || 40;
+      this.margin = options.margin || 15;
       this.hoverFactor = options.hoverFactor || -0.1;
       this.gap = options.gap || 5;
       this.debug = options.debug || false;
@@ -522,7 +522,7 @@ $(function () {
               }
             }
 
-            e.preventDefault();
+            // e.preventDefault();
           };
         }
       },
@@ -635,7 +635,7 @@ $(function () {
       $('.header-main__order').removeClass('popup-open');
       location.reload();
     }
-    setTimeout(popupSuccessClose, 7000);
+    // setTimeout(popupSuccessClose, 7000);
   }
 
   // Устанавливаем обработчик потери фокуса для всех полей ввода текста

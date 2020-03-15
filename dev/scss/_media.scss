@@ -48,4 +48,41 @@
   .form {
     width: 90%;
   }
+
+  .popup {
+    width: 101%;
+  }
+
+  .popup-content__icon-wrap {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .form {
+    width: 100%;
+
+    &-title {
+      font-size: 2.5em;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    form {
+      padding: 10px;
+    }
+  }
+
+  .popup-content {
+    &__title {
+      font-size: 20px;
+    }
+
+    &__text {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
 }

@@ -8,7 +8,7 @@
 
   &__item {
     display: flex;
-    // align-items: center;
+    align-items: flex-start;
     position: relative;
     margin-bottom: 20px;
 
@@ -26,7 +26,7 @@
 
   &__title {
     margin: 0;
-    padding: 0 0 0 20px;
+    padding: 30px 20px;
     background-color: $global-blue;
     color: #ffffff;
     font-size: 18px;

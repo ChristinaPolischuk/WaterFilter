@@ -1,0 +1,170 @@
+.tooltip {
+  position: absolute;
+  width: 250px;
+  bottom: calc(100% + 30px);
+  left: -125px;
+  padding: 12px;
+  border-radius: 5px;
+  background: lightcoral;
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+  font-weight: 400;
+  opacity: 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 45%;
+    bottom: -8px;
+    background: lightcoral;
+    clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+    transform: rotate(-45deg);
+    border-radius: 0 0 0 0.25em;
+  }
+
+  &.tooltip-hover {
+    animation: fadeInUp .8s ease;
+    opacity: 1;
+    z-index: 11;
+
+  }
+
+  &.tooltip-out {
+    animation: fadeOutDown .4s ease;
+    opacity: 0;
+  }
+
+  &-container {
+    display: inline-block;
+    position: absolute;
+
+    .icon {
+      cursor: pointer;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      border-radius: 50%;
+      font-size: 25px;
+      color: #ffffff;
+      font-weight: 700;
+      background-color: lightcoral;
+
+      position: absolute;
+      z-index: 2;
+      top: -10px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        left: -5px;
+        top: -5px;
+        width: 40px;
+        height: 40px;
+        background: rgba(lightcoral, .9);
+        border-radius: 50%;
+        animation: pulse 2s ease infinite;
+      }
+    }
+
+    &:nth-of-type(1) {
+      top: 8%;
+      left: 32%;
+    }
+
+    &:nth-of-type(2) {
+      top: 23%;
+      left: 45%;
+    }
+
+    &:nth-of-type(3) {
+      top: 25%;
+      left: 30%;
+    }
+
+    &:nth-of-type(4) {
+      top: 90%;
+      left: 1%;
+    }
+
+    &:nth-of-type(5) {
+      top: 90%;
+      left: 25%;
+    }
+
+    &:nth-of-type(6) {
+      top: 90%;
+      left: 40%;
+    }
+
+    &:nth-of-type(7) {
+      top: 90%;
+      left: 57%;
+    }
+
+    &:nth-of-type(8) {
+      top: 90%;
+      left: 68%;
+    }
+
+    &:nth-of-type(9) {
+      top: 90%;
+      left: 85%;
+    }
+  }
+
+  &-title {
+    display: block;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  &-text {
+    font-size: 14px;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(.6);
+    opacity: .6;
+  }
+
+  50% {
+    opacity: .4;
+  }
+
+  100% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(40px) scale(.5);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutDown {
+  0% {
+
+    opacity: 1;
+  }
+
+  100% {
+
+    opacity: 0;
+  }
+}

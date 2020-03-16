@@ -852,4 +852,15 @@ $(function () {
   //   if ($(this).val() != '') $(this).parent().addClass('filled-out');
   //   else $(this).parent().removeClass('filled-out');
   // });
+
+  $('.tooltip-container .icon').on('mouseover', function () {
+    $(this).prev().addClass('tooltip-hover');
+    $(this).prev().removeClass('tooltip-out');
+  });
+
+  $('.tooltip-container .icon').on('mouseout', function () {
+    $(this).prev().removeClass('tooltip-hover');
+    $(this).prev().addClass('tooltip-out');
+  });
+
 });

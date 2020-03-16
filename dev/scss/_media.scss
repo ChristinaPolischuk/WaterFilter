@@ -1,6 +1,24 @@
+@media screen and (max-width: 1489px) {
+  .purification {
+    &__img,
+    &__steps {
+      margin: 0 auto;
+    }
+
+    &__img {
+      margin-bottom: 60px;
+      flex: auto;
+    }
+
+    &__steps {
+      max-width: 100%;
+      width: 80%;
+    }
+  }
+}
+
 @media screen and (max-width: 1440px) {
   .form {
-
     &-title {
       font-size: 3em;
 
@@ -65,7 +83,7 @@
 
     &__title {
       width: 222px;
-      padding: 20px;
+      padding: 20px 10px;
       margin-bottom: 25px;
       border-radius: 15px/25px;
       position: relative;
@@ -74,7 +92,7 @@
       font-size: 16px;
 
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -23px;
         left: 10px;
@@ -83,6 +101,14 @@
         border-style: solid;
         border-width: 24px 24px 0 24px;
         border-color: $global-blue transparent transparent transparent;
+      }
+    }
+  }
+  .changes {
+    &-list {
+      &__descr {
+        font-size: 13px;
+        line-height: 20px;
       }
     }
   }
@@ -103,6 +129,21 @@
 
   .advantages-list {
     width: 100%;
+  }
+
+  .purification {
+    &__steps {
+      width: 100%;
+    }
+  }
+
+  .changes {
+    &-list {
+      flex-wrap: wrap;
+      &__item {
+        width: 50%;
+      }
+    }
   }
 }
 
@@ -135,6 +176,18 @@
     &__text {
       font-size: 14px;
       line-height: 20px;
+    }
+  }
+
+  .changes {
+    &-list {
+      &__item {
+        width: 100%;
+      }
+      &__descr {
+        font-size: 16px;
+        line-height: 23px;
+      }
     }
   }
 }

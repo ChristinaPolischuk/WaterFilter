@@ -1,5 +1,6 @@
 @media screen and (max-width: 1489px) {
   .purification {
+
     &__img,
     &__steps {
       margin: 0 auto;
@@ -104,6 +105,7 @@
       }
     }
   }
+
   .changes {
     &-list {
       &__descr {
@@ -140,9 +142,19 @@
   .changes {
     &-list {
       flex-wrap: wrap;
+
       &__item {
         width: 50%;
       }
+    }
+  }
+
+  .saving-content {
+    flex-wrap: wrap;
+
+    &__item {
+      width: 100%;
+      margin-bottom: 30px;
     }
   }
 }
@@ -184,6 +196,7 @@
       &__item {
         width: 100%;
       }
+
       &__descr {
         font-size: 16px;
         line-height: 23px;

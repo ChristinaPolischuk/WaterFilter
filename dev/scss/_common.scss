@@ -6,7 +6,9 @@ html {
   height: 100%;
 }
 
-*,*::before,*::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -21,8 +23,7 @@ a {
 }
 
 section {
-  padding: 30px 0 30px 60px;
-  min-height: calc(100vh - 120px);
+  padding: 30px 0;
   color: $text-color;
 }
 
@@ -30,18 +31,19 @@ section {
   max-width: 1600px;
   // min-width: 320px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 15px 0 75px;
 }
 
 .section-title {
-  margin: 0 0 20px 0;
+  margin: 0;
   padding: 0;
-  font-size: 70px;
+  font-size: 60px;
   font-weight: 700;
   filter: url("#goovey");
   color: $global-blue;
 
   &__wrap {
+    margin-bottom: 35px;
     text-align: center;
 
   }

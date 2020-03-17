@@ -1,5 +1,5 @@
 .color {
-  background: linear-gradient(to right, $btn-color-purple, $btn-color-sea);
+  background: linear-gradient(to right, $btn-color-purple, $color-sea);
 }
 
 .popup-wrapper {
@@ -58,7 +58,7 @@
   right: var(--offset);
   bottom: var(--offset);
   top: var(--offset);
-  background: linear-gradient(to right, $btn-color-purple, $btn-color-sea);
+  background: linear-gradient(to right, $btn-color-purple, $color-sea);
   transform: scale(0);
   transition: all 0.5s ease 0s;
   border-radius: 50%;
@@ -71,7 +71,7 @@
   right: var(--offset);
   bottom: var(--offset);
   top: var(--offset);
-  background: linear-gradient(to right, lighten($btn-color-purple, 5%), lighten($btn-color-sea, 5%));
+  background: linear-gradient(to right, lighten($btn-color-purple, 5%), lighten($color-sea, 5%));
   transform: scale(0);
   transition: all 0.5s ease 0.1s;
 }
@@ -83,7 +83,7 @@
   right: var(--offset);
   bottom: var(--offset);
   top: var(--offset);
-  background: linear-gradient(to right, lighten($btn-color-purple, 10%), lighten($btn-color-sea, 10%));
+  background: linear-gradient(to right, lighten($btn-color-purple, 10%), lighten($color-sea, 10%));
   z-index: 102;
   transition: all 0.5s ease 0.2s;
 }
@@ -95,7 +95,7 @@
   right: var(--offset);
   bottom: var(--offset);
   top: var(--offset);
-  background: linear-gradient(to right, lighten($btn-color-purple, 15%), lighten($btn-color-sea, 15%));
+  background: linear-gradient(to right, lighten($btn-color-purple, 15%), lighten($color-sea, 15%));
   z-index: 103;
   transition: all 0.5s ease 0.3s;
 }
@@ -107,7 +107,7 @@
   right: var(--offset);
   bottom: var(--offset);
   top: var(--offset);
-  background: linear-gradient(to right, lighten($btn-color-purple, 20%), lighten($btn-color-sea, 20%));
+  background: linear-gradient(to right, lighten($btn-color-purple, 20%), lighten($color-sea, 20%));
   z-index: 104;
   transition: all 0.5s ease 0.4s;
 }
@@ -173,7 +173,7 @@
 
 .header-main__order.popup-open .popup-inside {
   border-radius: 15px/25px;
-  box-shadow: -50px 0 200px -50px $btn-color-purple, 50px 0 200px -50px $btn-color-sea;
+  box-shadow: -50px 0 200px -50px $btn-color-purple, 50px 0 200px -50px $color-sea;
 }
 
 .header-main__order.popup-open .background {

@@ -1,0 +1,27 @@
+.service {
+  background-color: $light-blue;
+  padding: 0;
+
+  &-content {
+    display: flex;
+
+    &__descr,
+    &__img {
+      width: 50%;
+      position: relative;
+      right: -15px;
+    }
+
+    &__descr {
+      .section-title {
+        text-align: center;
+      }
+    }
+
+    &__img {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

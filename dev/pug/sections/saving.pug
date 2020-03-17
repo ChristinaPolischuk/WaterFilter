@@ -1,26 +1,25 @@
-section.saving
+section.saving(style="background-image: url(img/clean@3x.jpg)")
   .container
-    .section-title__wrap
-      h2.section-title Економія з першого дня грошей та часу
+    h2.section-title Економія з першого дня грошей та часу
     .saving-content
       .saving-content__item
         picture
-          source(type="image/webp" srcset="img/bottle.webp 1x")
-          img(src="img/bottle.jpg" alt="5 ступенів очищення")
+          source(type="image/webp" srcset="img/bottle.webp 1x, img/bottle@2x.webp 2x, img/bottle@3x.webp 3x")
+          img(src="img/bottle.jpg" srcset="img/bottle@2x.jpg 2x, img/bottle@3x.jpg 3x" alt="Пляшка")
         .saving-content__price
           span.saving-content__price-number 8*
           span.saving-content__price-text грн/л
       .saving-content__item
         picture
           source(type="image/webp" srcset="img/water_jar.webp 1x")
-          img(src="img/water_jar.png" alt="5 ступенів очищення")
+          img(src="img/water_jar.png" alt="Колба")
         .saving-content__price
           span.saving-content__price-number 3.8*
           span.saving-content__price-text грн/л
       .saving-content__item
         picture
-          source(type="image/webp" srcset="img/ecosoft.webp 1x")
-          img(src="img/ecosoft.png" alt="5 ступенів очищення")
+          source(type="image/webp" srcset="img/5classic@2x.webp 1x, srcset=img/5classic@2x.webp 2x, img/5classic@3x.webp 3x")
+          img(src="img/5classic@2x.png" srcset="img/5classic@2x.png 2x, img/5classic@3x.png 3x" alt="5 ступеневий зворотній осмос")
         .saving-content__price
           span.saving-content__price-number 0.50*
           span.saving-content__price-text грн/л

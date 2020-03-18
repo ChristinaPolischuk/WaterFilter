@@ -129,6 +129,22 @@
     display: none;
   }
 
+  .saving {
+    &-content {
+      flex-direction: column;
+      align-items: center;
+
+      &__item {
+        margin-bottom: 40px;
+        margin-right: 0;
+      }
+    }
+
+    &-advantages {
+      margin-top: 0;
+    }
+  }
+
   .advantages-list {
     width: 100%;
   }
@@ -149,15 +165,6 @@
     }
   }
 
-
-  .saving-content {
-    flex-wrap: wrap;
-
-    &__item {
-      width: 100%;
-      margin-bottom: 30px;
-    }
-  }
 }
 
 @media screen and (max-width: 479px) {
@@ -189,6 +196,18 @@
     &__text {
       font-size: 14px;
       line-height: 20px;
+    }
+  }
+
+  .saving {
+    &-advantages {
+      &__title {
+        font-size: 25px;
+      }
+
+      &__text {
+        font-size: 18px;
+      }
     }
   }
 

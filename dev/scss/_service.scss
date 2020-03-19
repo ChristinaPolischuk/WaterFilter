@@ -4,23 +4,55 @@
 
   &-content {
     display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 
-    &__descr,
-    &__img {
-      width: 50%;
-      position: relative;
-      right: -15px;
+    &__title,
+    &__text {
+      padding: 0;
+      margin: 0 0 10px 0;
     }
 
-    &__descr {
-      .section-title {
-        text-align: center;
+    &__title {
+      font-size: 25px;
+      letter-spacing: 0.5px;
+      color: $global-blue;
+    }
+
+    &__text {
+      font-size: 18px;
+      line-height: 25px;
+    }
+
+    &__list {
+      margin-bottom: 10px;
+    }
+
+    &__item {
+      padding-left: 30px;
+      margin-bottom: 20px;
+      font-size: 18px;
+      line-height: 25px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 25px;
+        height: 25px;
+        border-radius: 0 25px 25px 25px;
+        border: 2px solid $global-blue;
+        // background-color: $global-blue;
       }
     }
 
     &__img {
+      margin-left: 30px;
+
       img {
-        width: 100%;
+        max-width: 100%;
       }
     }
   }

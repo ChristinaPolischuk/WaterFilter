@@ -41,6 +41,8 @@
   }
 }
 
+@media screen and (max-width: 1366px) {}
+
 @media screen and (max-width: 1052px) {
   .form {
     &-group__error {
@@ -114,6 +116,20 @@
       }
     }
   }
+
+  .service {
+    &-content {
+      flex-direction: column-reverse;
+      align-items: center;
+
+      &__img {
+        margin-left: 0;
+        margin-bottom: 25px;
+        max-width: 150px;
+        max-height: 150px;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -169,7 +185,7 @@
 
 @media screen and (max-width: 479px) {
   .section-title {
-    font-size: 50px;
+    font-size: 35px;
   }
 
   .form {

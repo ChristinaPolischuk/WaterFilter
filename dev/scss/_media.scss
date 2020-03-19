@@ -225,6 +225,12 @@
         font-size: 18px;
       }
     }
+
+    &-content {
+      &__price {
+        right: -10px;
+      }
+    }
   }
 
   .changes {

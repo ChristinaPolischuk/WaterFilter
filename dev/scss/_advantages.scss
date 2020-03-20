@@ -1,5 +1,4 @@
 .advantages {
-  padding-top: 60px;
 
   &-list {
     margin: 0 auto;
@@ -16,6 +15,10 @@
       background-color: $light-blue;
       padding: 15px;
       transition: background-color .3s, color .3s;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
 
       &::before {
         content: counter(step);

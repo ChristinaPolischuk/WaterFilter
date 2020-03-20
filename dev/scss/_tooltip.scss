@@ -17,7 +17,7 @@
     position: absolute;
     width: 20px;
     height: 20px;
-    left: 45%;
+    left: 52%;
     bottom: -8px;
     background: lightcoral;
     clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
@@ -90,6 +90,14 @@
     &:nth-of-type(4) {
       top: 90%;
       left: 1%;
+
+      .tooltip {
+        left: -8px;
+
+        &::after {
+          left: 6%;
+        }
+      }
     }
 
     &:nth-of-type(5) {
@@ -114,7 +122,15 @@
 
     &:nth-of-type(9) {
       top: 90%;
-      left: 85%;
+      right: 15%;
+
+      .tooltip {
+        left: -143px;
+
+        &::after {
+          left: 59%;
+        }
+      }
     }
   }
 

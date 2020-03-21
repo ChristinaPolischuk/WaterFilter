@@ -153,6 +153,28 @@
     border: none;
     background-color: transparent;
     outline: none;
+    position: relative;
+    letter-spacing: 1px;
+
+    .liquid-button {
+      position: relative;
+      z-index: 6;
+    }
+
+    &__text {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 20px;
+      background-color: $global-blue;
+      cursor: pointer;
+      color: #ffffff;
+      font-size: 14px;
+
+    }
 
     &-wrapper {
       text-align: center;

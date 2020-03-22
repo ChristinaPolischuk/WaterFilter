@@ -2,17 +2,17 @@
 
 .footer {
   position: relative;
-  height: 400px;
-  padding: 15px 0;
+  // height: 400px;
   display: flex;
   align-items: flex-end;
 
-  .container {
-    width: 100%;
-  }
-
   &-content {
+    width: 100%;
     color: #ffffff;
+    padding: 5px 0;
+    background-color: $global-blue;
+    position: relative;
+    z-index: 2;
 
     &__contacts {
 

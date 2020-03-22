@@ -1,0 +1,126 @@
+.water-drop {
+  width: 105%;
+  // height: auto;
+  position: absolute;
+  top: -148px;
+
+  &__wrapper {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+  }
+}
+
+.water-anim {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.big-drop-one {
+  animation: big-drop 2000ms ease infinite;
+}
+
+.big-drop-two {
+  animation: big-drop 2000ms ease infinite 60ms;
+}
+
+.small-drop-one {
+  animation: small-drop 2000ms ease infinite 900ms;
+}
+
+.small-drop-two {
+  animation: small-drop 2000ms ease infinite 950ms;
+}
+
+.ripple-l {
+  animation: l-side-ripple 2000ms ease infinite 1250ms;
+}
+
+.ripple-r {
+  animation: r-side-ripple 2000ms ease infinite 1250ms;
+}
+
+@keyframes big-drop {
+
+  from,
+  to {
+    transform: translate(0, 200px);
+  }
+
+  50% {
+    transform: translate(0, -180px);
+  }
+}
+
+@keyframes small-drop {
+
+  from,
+  to {
+    transform: translate(0, 200px);
+  }
+
+  50% {
+    transform: translate(0, -150px);
+  }
+}
+
+@keyframes l-side-ripple {
+
+  from,
+  to {
+    transform: translate(0, -40px);
+  }
+
+  25% {
+    transform: translate(-240px, 0);
+  }
+
+  42% {
+    transform: translate(0, 0);
+  }
+
+  43% {
+    transform: translate(0, -25px);
+  }
+
+  65% {
+    transform: translate(-150px, 0);
+  }
+
+  99% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes r-side-ripple {
+
+  from,
+  to {
+    transform: translate(0, -40px);
+  }
+
+  25% {
+    transform: translate(240px, 0);
+  }
+
+  42% {
+    transform: translate(0, 0);
+  }
+
+  43% {
+    transform: translate(0, -25px);
+  }
+
+  75% {
+    transform: translate(150px, 0);
+  }
+
+  99% {
+    transform: translate(0, 0);
+  }
+}

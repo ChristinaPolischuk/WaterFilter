@@ -299,4 +299,13 @@ $basepx: 16px;
       }
     }
   }
+
+  .return {
+    &-content {
+      &__text {
+        font-size: 18px;
+        line-height: 25px;
+      }
+    }
+  }
 }

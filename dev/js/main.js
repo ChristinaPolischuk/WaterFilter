@@ -23,17 +23,22 @@ $(function () {
     y = e.clientY;
   });
 
-  $(".menu-hamburger, .menu-inner").on("click", function () {
-    $(this)
-      .parent()
-      .addClass("expanded");
-    menuExpanded = true;
+  $(".menu-hamburger").on("click", function () {
+    if ($(this).parent().hasClass('expanded')) {
+      menuExpanded = false;
+      $(this).parent().removeClass('expanded')
+    } else {
+      $(this)
+        .parent()
+        .addClass("expanded");
+      menuExpanded = true;
+    }
+
   });
 
-  $(".menu-inner").on("mouseleave", function () {
+  $(".menu").on("mouseleave", function () {
     menuExpanded = false;
     $(this)
-      .parent()
       .removeClass("expanded");
   });
 
@@ -861,6 +866,24 @@ $(function () {
   $('.tooltip-container .icon').on('mouseout', function () {
     $(this).prev().removeClass('tooltip-hover');
     $(this).prev().addClass('tooltip-out');
+  });
+
+  $('a[href^="#"]').click(function () {
+    var elementClick = $(this).attr('href');
+    var destination = $(elementClick).offset().top;
+    // if ($.browser.safari) {
+    //   $('body').animate({
+    //     scrollTop: destination
+    //   }, 1000);
+    // } else {
+    //   $('html').animate({
+    //     scrollTop: destination
+    //   }, 1000);
+    // }
+    $('html').animate({
+      scrollTop: destination
+    }, 1000);
+    return false;
   });
 
 });

@@ -1,0 +1,14 @@
+footer.footer
+  .water-drop__wrapper
+    <svg class="water-drop" viewBox="0 0 1200 600"> <defs> <filter id="water"> <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur"/> <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 25 -5" result="goo"/> </filter> </defs> <g class="water-anim" filter="url(#water)"> <rect x="300" y="0" width="600" height="100%" fill="none" stroke="none"/> <rect class="svg-color" x="300" y="300" width="600" height="50" fill="#03a9f4" stroke="none"/> <circle class="big-drop-one" cx="50%" cy="340" style="stroke: none;" r="40" fill="#03a9f4"></circle> <circle class="big-drop-two" cx="50%" cy="340" style="stroke: none;" r="30" fill="#03a9f4"></circle> <circle class="ripple-l" cx="48%" cy="325" style="stroke: none;" r="25" fill="#03a9f4"></circle> <circle class="ripple-r" cx="52%" cy="325" style="stroke: none;" r="25" fill="#03a9f4"></circle> <circle class="small-drop-one" cx="50%" cy="350" style="stroke: none;" r="20" fill="#03a9f4"></circle> <circle class="small-drop-two" cx="50%" cy="350" style="stroke: none;" r="20" fill="#03a9f4"></circle> </g> <rect filter="url(#water)" class="svg-color" x="0" y="300" width="100%" height="300" fill="#03a9f4" stroke="none"/></svg>
+  .container
+    .footer-content
+      .footer-content__contacts
+        .footer-content__contacts-block
+          span.footer-content__contacts-title Сервісний центр:
+          a.footer-content__contacts-link(href="tel:+380661168202") +38(066)116-82-02
+        .footer-content__contacts-block
+          span.footer-content__contacts-title Зробити замовлення:
+          a.footer-content__contacts-link(href="tel:+380633483177") +38(063)348-31-77
+          a.footer-content__contacts-link(href="tel:+380957414201") +38(095)741-42-01
+          a.footer-content__contacts-link(href="tel:+380955239380") +38(095)523-93-80

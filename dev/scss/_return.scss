@@ -1,5 +1,18 @@
 .return {
+  padding-bottom: 0;
+
   &-content {
-    
+    &__text {
+      margin: 0 0 15px 0;
+      padding: 0;
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    &__item {
+      font-size: 17px;
+      line-height: 25px;
+      margin-bottom: 5px;
+    }
   }
 }

@@ -1,22 +1,26 @@
 section.delivery
-  .container
-    .section-title__wrap
-      h2.section-title Доставка
-    .delivery-content
-      .delivery-content__img
-        img(src="img/minivan.svg", alt="Доставка")
-      .delivery-content__descr
-        h3.delivery-content__title Доставка по Киеву
-        .delivery-content__list
-          .delivery-content__item Курьером службы доставки <span>ZRUCHNA</span> по Киеву - бесплатно Доставка осуществляется в течение 3 дней.
-          .delivery-content__item <span>Самовывоз</span> Вы можете забрать свою покупку в одном из фирменных магазинов (посмотреть адреса ближайших магазинов можно тут)
-          .delivery-content__item  Отделение <span>Новой почты</span> - бесплатно в ближайшее отделение Новой Почты.
-          .delivery-content__item  <span>Курьером</span> до двери - бесплатно Доставка двери-двери по Украине осуществляется курьерской службой.
-        h3.delivery-content__title Доставка по Украине
-        .delivery-content__list
-          .delivery-content__item Отправка по Украине осуществляется на следующий день после оформления заказа. Отправка заказов, оформленных в субботу и воскресенье, осуществляется в понедельник.
-          .delivery-content__item Доставка по Украине осуществляется курьерской службой «Нова Пошта»
-          .delivery-content__item Отделение Новой почты - бесплатно В ближайшее отделение Новой Почты
-        h3.delivery-content__title Самовывоз
-        .delivery-content__list
-          .delivery-content__item Самовывоз возможен по предзаказу с 10:00 до 20:00 по буднях и с 10:00 до 18:00 в выходные дни.
+  include ../components/car
+  .section-title__wrap
+    h2.section-title Доставка
+  .delivery-content
+    .container
+      h3.delivery-content__title
+        img(src="img/delivery.svg", alt="Доставка")
+        |Доставка по Києву:
+      .delivery-content__list
+        .delivery-content__item - Кур'єром служби доставки <span>ZRUCHNA</span> по Києву - безкоштовно Доставка здійснюється протягом 3 днів.
+        .delivery-content__item - <span>Самовивіз</span> - ви можете забрати свою покупку в одному з фірмових магазинів (подивитися адреси найближчих магазинів можна тут).
+        .delivery-content__item - <span>Нова пошта</span> - безкоштовно на відділення Нової Пошти.
+        .delivery-content__item - <span>Кур'єром до дверей</span> - безкоштовно. Доставка двері-двері по Україні здійснюється кур'єрською службою.
+      h3.delivery-content__title
+        img(src="img/delivery.svg", alt="Доставка")
+        |Доставка по Україні:
+      .delivery-content__list
+        .delivery-content__item - Відправка по Україні здійснюється на наступний день після оформлення замовлення. Відправка замовлень, оформлених в суботу та неділю, здійснюється в понеділок.
+        .delivery-content__item - Доставка по Україні здійснюється кур'єрською службою <span>«Нова пошта»</span>
+        .delivery-content__item - Відділення Нової пошти - безкоштовно Найближчим відділення Нової Пошти.
+      h3.delivery-content__title
+        img(src="img/delivery.svg", alt="Доставка")
+        |Самовивіз:
+      .delivery-content__list
+        .delivery-content__item Самовивіз можливий за попереднім замовленням з 10:00 до 20:00 по буднях і з 10:00 до 18:00 у вихідні дні.

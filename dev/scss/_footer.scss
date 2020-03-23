@@ -1,4 +1,4 @@
-@import 'waterdrop';
+@import "waterdrop";
 
 .footer {
   position: relative;
@@ -14,8 +14,13 @@
     position: relative;
     z-index: 2;
 
-    &__contacts {
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
+    &__contacts {
       &-block {
         margin-bottom: 10px;
 
@@ -39,5 +44,77 @@
         font-size: 16px;
       }
     }
+  }
+}
+
+.footer-social {
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
+  border: 1px solid #000;
+  padding: 10px;
+
+  &__link {
+    margin: 0 5px;
+    transition: 0.25s ease;
+  }
+
+  &__img {
+    width: 30px;
+  }
+}
+
+#socialBlob {
+  width: 30px;
+  height: 30px;
+  // transform: scale(0);
+  background: linear-gradient(120deg,
+      #ff1744,
+      #e040fb,
+      #2979ff,
+      #00e5ff,
+      #76ff03);
+  background-size: 1600% 1600%;
+  position: absolute;
+  mix-blend-mode: screen;
+  // pointer-events: none;
+  z-index: 1000;
+  transition: 0.15s linear;
+  animation: blobRadius 5s ease infinite, blobBackground 15s ease infinite;
+}
+
+@keyframes blobRadius {
+
+  0%,
+  100% {
+    border-radius: 43% 77% 80% 40% / 40% 40% 80% 80%;
+  }
+
+  20% {
+    border-radius: 47% 73% 61% 59% / 47% 75% 45% 73%;
+  }
+
+  40% {
+    border-radius: 46% 74% 74% 46% / 74% 58% 62% 46%;
+  }
+
+  60% {
+    border-radius: 47% 73% 61% 59% / 40% 40% 80% 80%;
+  }
+
+  80% {
+    border-radius: 50% 70% 52% 68% / 51% 61% 59% 69%;
+  }
+}
+
+@keyframes blobBackground {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
   }
 }

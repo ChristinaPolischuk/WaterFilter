@@ -1,4 +1,26 @@
 $(function () {
+
+  isMobile = {
+    Android: function () {
+      return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function () {
+      return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function () {
+      return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function () {
+      return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function () {
+      return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function () {
+      return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+  };
+
   //menu
   var height = window.innerHeight,
     // var height = document.body.offsetHeight,
@@ -15,31 +37,38 @@ $(function () {
   (blobPath = $("#blob-path")),
   (hamburger = $(".menu-hamburger"));
 
-  $(this).on("mousemove", function (e) {
-    // x = e.pageX;
-    x = e.clientX;
+  if (!isMobile.any()) {
+    $(this).on("mousemove", function (e) {
+      // x = e.pageX;
+      x = e.clientX;
 
-    // y = e.pageY;
-    y = e.clientY;
-  });
+      // y = e.pageY;
+      y = e.clientY;
+    });
+
+    $(".menu").on("mouseleave", function () {
+      menuExpanded = false;
+      $(this).removeClass("expanded");
+    });
+
+  }
 
   $(".menu-hamburger").on("click", function () {
-    if ($(this).parent().hasClass('expanded')) {
+    if (
+      $(this)
+      .parent()
+      .hasClass("expanded")
+    ) {
       menuExpanded = false;
-      $(this).parent().removeClass('expanded')
+      $(this)
+        .parent()
+        .removeClass("expanded");
     } else {
       $(this)
         .parent()
         .addClass("expanded");
       menuExpanded = true;
     }
-
-  });
-
-  $(".menu").on("mouseleave", function () {
-    menuExpanded = false;
-    $(this)
-      .removeClass("expanded");
   });
 
   function easeOutExpo(
@@ -638,16 +667,16 @@ $(function () {
   }
 
   function popupSuccess() {
-    $('.header-main__order').addClass('popup-open');
+    $(".header-main__order").addClass("popup-open");
     var popupSuccessClose = function () {
-      $('.header-main__order').removeClass('popup-open');
+      $(".header-main__order").removeClass("popup-open");
       location.reload();
-    }
+    };
     setTimeout(popupSuccessClose, 7000);
   }
 
   // Устанавливаем обработчик потери фокуса для всех полей ввода текста
-  $("input#name, input#surname, input#email, input#phone")
+  $("input#name, input#email, input#phone")
     .unbind()
     .blur(function () {
       if ($(this).val() != "")
@@ -667,11 +696,7 @@ $(function () {
       switch (id) {
         // Проверка поля "Имя"
         case "name":
-          var rv_name = /^[a-zA-Zа-яА-Я]+$/; // используем регулярное выражение
-
-          // Eсли длина имени больше 2 символов, оно не пустое и удовлетворяет рег. выражению,
-          // то добавляем этому полю класс .not_error,
-          // и ниже в контейнер для ошибок выводим слово " Принято", т.е. валидация для этого поля пройдена успешно
+          var rv_name = /^[a-zA-Zа-яА-Я]+$/;
 
           if (val.length > 2 && val != "" && rv_name.test(val)) {
             $(this)
@@ -691,11 +716,7 @@ $(function () {
                 },
                 400
               );
-          }
-
-          // Иначе, мы удаляем класс not-error и заменяем его на класс error, говоря о том что поле содержит ошибку валидации,
-          // и ниже в наш контейнер выводим сообщение об ошибке и параметры для верной валидации
-          else {
+          } else {
             $(this)
               .removeClass("not_error")
               .addClass("error");
@@ -758,12 +779,7 @@ $(function () {
 
           // Проверка поля "Телефон"
         case "phone":
-          // if (val == "") return;
-          var rv_phone = /^(\+)?(\(\d{2,3}\) ?\d|\d)(([ \-]?\d)|( ?\(\d{2,3}\) ?)){5,12}\d$/; // используем регулярное выражение
-
-          // Eсли длина имени больше 2 символов, оно не пустое и удовлетворяет рег. выражению,
-          // то добавляем этому полю класс .not_error,
-          // и ниже в контейнер для ошибок выводим слово " Принято", т.е. валидация для этого поля пройдена успешно
+          var rv_phone = /^(\+)?(\(\d{2,3}\) ?\d|\d)(([ \-]?\d)|( ?\(\d{2,3}\) ?)){5,12}\d$/;
 
           if (val.length > 8 && val != "" && rv_phone.test(val)) {
             $(this)
@@ -783,11 +799,7 @@ $(function () {
                 },
                 400
               );
-          }
-
-          // // Иначе, мы удаляем класс not-error и заменяем его на класс error, говоря о том что поле содержит ошибку валидации,
-          // // и ниже в наш контейнер выводим сообщение об ошибке и параметры для верной валидации
-          else {
+          } else {
             $(this)
               .removeClass("not_error")
               .addClass("error");
@@ -810,8 +822,8 @@ $(function () {
       } // end switch(...)
     }); // end blur()
 
-  // Теперь отправим наше письмо с помощью AJAX
-  $(".form form").submit(function (e) {
+  //Теперь отправим наше письмо с помощью AJAX
+  $("#send_order").submit(function (e) {
     // Запрещаем стандартное поведение для кнопки submit
     e.preventDefault();
 
@@ -826,14 +838,14 @@ $(function () {
 
       $.ajax({
         url: "send.php",
-        type: "post",
+        type: "POST",
         data: $(this).serialize(),
 
         beforeSend: function () {
           $(".form form :input").attr("disabled", "disabled");
         },
 
-        success: function () {
+        success: function (data) {
           $(".form form :input").removeAttr("disabled");
           $(".form form :text")
             .val("")
@@ -841,7 +853,10 @@ $(function () {
             .next(".form-group__error")
             .text("");
           // alert(response);
+          $(".form").hide();
           popupSuccess();
+          var result = jQuery.parseJSON(data);
+          $(".result").text(result);
         }
       }); // end ajax({...})
     }
@@ -853,23 +868,37 @@ $(function () {
     }
   }); // end submit()
 
-  // $('input').on('change', function () {
-  //   if ($(this).val() != '') $(this).parent().addClass('filled-out');
-  //   else $(this).parent().removeClass('filled-out');
+  // $("input").on("change", function () {
+  //   if ($(this).val() != "")
+  //     $(this)
+  //     .parent()
+  //     .addClass("filled-out");
+  //   else
+  //     $(this)
+  //     .parent()
+  //     .removeClass("filled-out");
   // });
 
-  $('.tooltip-container .icon').on('mouseover', function () {
-    $(this).prev().addClass('tooltip-hover');
-    $(this).prev().removeClass('tooltip-out');
+  $(".tooltip-container .icon").on("mouseover", function () {
+    $(this)
+      .prev()
+      .addClass("tooltip-hover");
+    $(this)
+      .prev()
+      .removeClass("tooltip-out");
   });
 
-  $('.tooltip-container .icon').on('mouseout', function () {
-    $(this).prev().removeClass('tooltip-hover');
-    $(this).prev().addClass('tooltip-out');
+  $(".tooltip-container .icon").on("mouseout", function () {
+    $(this)
+      .prev()
+      .removeClass("tooltip-hover");
+    $(this)
+      .prev()
+      .addClass("tooltip-out");
   });
 
   $('a[href^="#"]').click(function () {
-    var elementClick = $(this).attr('href');
+    var elementClick = $(this).attr("href");
     var destination = $(elementClick).offset().top;
     // if ($.browser.safari) {
     //   $('body').animate({
@@ -880,68 +909,104 @@ $(function () {
     //     scrollTop: destination
     //   }, 1000);
     // }
-    $('html').animate({
-      scrollTop: destination
-    }, 1000);
+    $("html").animate({
+        scrollTop: destination
+      },
+      1000
+    );
     return false;
   });
 
-  var blobCursor = function () {
-    var CURSOR = document.querySelector('#cursorBlob');
-    var LINKS = document.querySelectorAll('.menu-inner__anchor');
+  // var blobCursor = (function () {
+  //   var CURSOR = document.querySelector("#cursorBlob");
+  //   var LINKS = document.querySelectorAll(".menu-inner__anchor");
 
-    var setCursorPos = function setCursorPos(e) {
-      var posX = e.clientX,
-        posY = e.clientY;
-      CURSOR.style.top = "".concat(posY - CURSOR.offsetHeight / 2, "px");
-      CURSOR.style.left = "".concat(posX - CURSOR.offsetWidth / 2, "px");
-    };
+  //   var setCursorPos = function setCursorPos(e) {
+  //     var posX = e.clientX,
+  //       posY = e.clientY;
+  //     CURSOR.style.top = "".concat(posY - CURSOR.offsetHeight / 2, "px");
+  //     CURSOR.style.left = "".concat(posX - CURSOR.offsetWidth / 2, "px");
+  //   };
 
-    document.addEventListener('mousemove', setCursorPos);
+  //   document.addEventListener("mousemove", setCursorPos);
 
-    var setCursorHover = function setCursorHover() {
-      return CURSOR.style.transform = 'scale(1.5)';
-    };
+  //   var setCursorHover = function setCursorHover() {
+  //     return (CURSOR.style.transform = "scale(1.5)");
+  //   };
 
-    var removeCursorHover = function removeCursorHover() {
-      return CURSOR.style.transform = '';
-    };
+  //   var removeCursorHover = function removeCursorHover() {
+  //     return (CURSOR.style.transform = "");
+  //   };
 
-    LINKS.forEach(function (link) {
-      return link.addEventListener('mouseover', setCursorHover);
-    });
-    LINKS.forEach(function (link) {
-      return link.addEventListener('mouseleave', removeCursorHover);
-    });
-  }();
+  //   LINKS.forEach(function (link) {
+  //     return link.addEventListener("mouseover", setCursorHover);
+  //   });
+  //   LINKS.forEach(function (link) {
+  //     return link.addEventListener("mouseleave", removeCursorHover);
+  //   });
+  // })();
 
-  var socialCursor = function () {
-    var CURSOR = document.querySelector('#socialBlob');
-    var LINKS = document.querySelectorAll('.footer-social__link');
+  // $('#send_form').on('submit', function (e) {
+  //   e.preventDefault();
+  //   var form = $(this);
+  //   form.serialize();
+  //   $.ajax({
+  //     url: '/send.php',
+  //     type: 'POST',
+  //     data: form,
+  //     success: function () {
+  //       alert("Запрос на сервер успешно отправлен");
+  //     }
+  //   });
 
-    var setCursorPos = function setCursorPos(e) {
-      var posX = e.pageX,
-        posY = e.pageY;
-      CURSOR.style.top = "".concat(posY - CURSOR.offsetHeight / 2, "px");
-      CURSOR.style.left = "".concat(posX - CURSOR.offsetWidth / 2, "px");
-    };
+  // });
 
-    document.addEventListener('mousemove', setCursorPos);
+  // $(".form-submit-btn").on("click", function(e) {
+  //   e.preventDefault();
 
-    var setCursorHover = function setCursorHover() {
-      return CURSOR.style.transform = 'scale(1.5)';
-    };
+  //   // var send = {};
 
-    var removeCursorHover = function removeCursorHover() {
-      return CURSOR.style.transform = '';
-    };
+  //   // send['name'] = $('input[name="name"]').val();
+  //   // send['email'] = $('input[name="email"]').val();
+  //   // send['phone'] = $('input[name="phone"]').val();
 
-    LINKS.forEach(function (link) {
-      return link.addEventListener('mouseover', setCursorHover);
-    });
-    LINKS.forEach(function (link) {
-      return link.addEventListener('mouseleave', removeCursorHover);
-    });
-  }();
+  //   // var sendOrder = $("#send_order").serializeArray();
 
+  //   $.ajax({
+  //     url: "send.php",
+  //     type: "POST",
+  //     // data: sendOrder,
+  //     success: function(data) {
+  //       // send['name'].parent(".form-group").find('.form-group__error').text();
+  //       // alert(data);
+  //       // $('.form-group__error').text(data);
+
+  //       var sendForm = jQuery.parseJSON(data);
+  //       $('input[name="name"]')
+  //         .parent(".form-group")
+  //         .find(".form-group__error")
+  //         .text(sendForm.name);
+  //     }
+  //   });
+  // });
+
+  // $("#send").click(function () {
+  //   var form = $("#send_order").serialize();
+  //   $.ajax({
+  //     url: "send.php",
+  //     type: "POST",
+  //     data: form,
+  //     success: function (data) {
+  //       if (data) {
+  //         alert("Письмо отправлено");
+  //       } else {
+  //         alert("Ошибка");
+  //       }
+  //       // $('input[name="name"]')
+  //       //   .parent(".form-group")
+  //       //   .find(".form-group__error")
+  //       //   .text(data);
+  //     }
+  //   });
+  // });
 });

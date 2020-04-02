@@ -2,21 +2,20 @@ $basepx: 16px;
 
 @function em($target, $context: $basepx) {
   @if $target==0 {
-    @return 0
+    @return 0;
   }
 
-  @return $target / $context+0em;
+  @return $target / $context + 0em;
 }
 
 @mixin prefix($name, $value) {
-  @each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
+  @each $vendor in ("-webkit-", "-moz-", "-ms-", "-o-", "") {
     #{$vendor}#{$name}: #{$value};
   }
 }
 
 @media screen and (max-width: 1489px) {
   .purification {
-
     &__img,
     &__steps {
       margin: 0 auto;
@@ -57,7 +56,8 @@ $basepx: 16px;
   }
 }
 
-@media screen and (max-width: 1366px) {}
+@media screen and (max-width: 1366px) {
+}
 
 @media screen and (max-width: 1052px) {
   .form {
@@ -173,14 +173,6 @@ $basepx: 16px;
     width: 90%;
   }
 
-  .popup {
-    width: 101%;
-  }
-
-  .popup-content__icon-wrap {
-    display: none;
-  }
-
   .advantages-list {
     width: 100%;
   }
@@ -235,6 +227,12 @@ $basepx: 16px;
       }
     }
   }
+
+  .footer-content {
+    .container {
+      flex-direction: column;
+    }
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -264,7 +262,7 @@ $basepx: 16px;
     }
 
     &__text {
-      font-size: 14px;
+      font-size: 16px;
       line-height: 20px;
     }
   }
@@ -305,6 +303,27 @@ $basepx: 16px;
       &__text {
         font-size: 18px;
         line-height: 25px;
+      }
+    }
+  }
+
+  .footer-social {
+    &__link {
+      width: 30px;
+      height: 30px;
+
+      .front,
+      .back {
+        width: 30px;
+        height: 30px;
+      }
+
+      .front img {
+        width: 15px;
+      }
+
+      .back img {
+        width: 20px;
       }
     }
   }

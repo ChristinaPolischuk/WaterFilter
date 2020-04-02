@@ -1,62 +1,155 @@
 <?php
 
-if($_SERVER['REQUEST_METHOD'] == 'POST') {
-  $_POST['name'];
-  $_POST['email'];
-  $_POST['phone'];
-}
+//Определить переменные и установить в пустые значения
+// $nameErr = $emailErr = $phoneErr = "";
+// $name = $email = $phone = "";
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+// $name = test_input($_POST["name"]);
+// $email = test_input($_POST["email"]);
+// $phone = test_input($_POST["website"]);
+// }
 
-function clean($value = "") {
-  $value = trim($value);
-  $value = stripslashes($value);
-  $value = strip_tags($value);
-  $value = htmlspecialchars($value);
-  
-  return $value;
-}
+// function test_input($data) {
+//   $data = trim($data);
+//   $data = stripslashes($data);
+//   $data = htmlspecialchars($data);
+//   return $data;
+// }
 
-function check_length($value = "", $min, $max) {
-  $result = (mb_strlen($value) < $min || mb_strlen($value) > $max);
-  return !$result;
-}
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//     if (empty($_POST["name"])) {
+//       $nameErr = "* Введіть ваше iм'я";
+//     } else {
+//       $name = test_input($_POST["name"]);
+//       if (!preg_match("/^[a-яA-Я ]*$/",$name)) {
+//         $nameErr = "* Дозволено лише літери та пропуски";
+//         echo $nameErr;
+//       }
+//     }
 
-$name = clean($name);
-$email = clean($email);
-$phone = clean($phone);
+//     if (empty($_POST["email"])){
+//       $emailErr = "* Введіть ваш email";
+//     } else {
+//       $email = test_input($_POST["email"]);
+//       if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+//         $emailErr = "* Невірний формат email";
+//       }
+//     }
 
-if(!empty($name) && !empty($email) && !empty($phone)) {
-  $email_validate = filter_var($email, FILTER_VALIDATE_EMAIL);
-  if(check_length($name, 3, 25) && check_length($phone, 9, 35) && $email_validate) {
-    echo "Дякуємо за замовлення";
-} else { // добавили сообщение
-  echo "Введені дані є некоректними";
-}
-}else { // добавили сообщение
-  echo "Заповніть усі поля";
-}
+//     if (empty($_POST["phone"])){
+//       $phoneErr = "* Введіть ваш телефон";
+//     } else {
+//       $phone = test_input($_POST["phone"]);
+//       if (!preg_match("/^(\+)?(\(\d{2,3}\) ?\d|\d)(([ \-]?\d)|( ?\(\d{2,3}\) ?)){5,12}\d$/",$phone)) {
+//         $phoneErr = "* Невірний формат телефону";
+//       }
+//     }
 
-// $email = $_POST['email'];
-// $name = $_POST['name'];
-// $surname = $_POST['surname'];
+//     if(!$nameErr && !$emailErr && !$phoneErr) {
+//       $success = "Ваше повідомлення відправлено";
+//     }
 
-// $to = "senyqy@gmail.com";
-// $subject = "От посетителя сайта";
-// $text =  "Написал(а): $name\n Контактный email - $email\n\n Фамилия: $surname\n";
+//   }
 
-// $header.= "Content-type: text/html; charset=utf-8\r\n";
-// $header .= "MIME-Version: 1.0\r\n";
-// $sending = mail($to, $subject, $text, $headers);
+// if(isset($_POST['send'])) 
+if($_SERVER["REQUEST_METHOD"] == "POST")
+  {
+    if($_POST['name'] != "")
+    {
+      $_POST['name'] = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
 
-// if($sending) echo "Письмо отправлено. Ответа не ждите :)";
+      if($_POST['name'] == "")
+      {
+        $error_name = "Ім'я введено некоректно";
+      }
 
-$recepient = "senyqy@gmail.com";
-$siteName = "Пан Фільтрон";
+    }
+    else
+    {
+      $error_name = "Введіть ваше ім'я";
+    }
 
-$name = trim($_POST['name']);
-$email = trim($_POST['email']);
-$phone = trim($_POST['phone']);
-$message = "Ім'я: $name \nE-mail: $email \nТелефон: $phone"
+    if($_POST['email'] != "")
+    {
+      $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 
-$pageTitle = "Замовлення з сайту \"$siteName\"";
+      if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+      {
+        $error_email = "$email не є коректною емейл адресою";
+      }
+    }
+    else
+    {
+      $error_email = "Введіть ваш емейл";
+    }
 
-mail($recepient, $pageTitle, $message, "Content-type: text/plain; charset=\"utf-8\" from $recepient");
+    if($_POST['phone'] != "")
+    {
+      $_POST['phone'] = filter_var($_POST['phone'], FILTER_SANITIZE_NUMBER_FLOAT);
+
+      if($_POST['phone'] == "")
+      {
+        $error_phone = "Введть телефон без спеціальних символів";
+      }
+
+    }
+    else
+    {
+      $error_phone = "Введіть ваше повідомлення";
+    }
+
+    if(!$error_name && !$error_email && !$error_phone) {
+      $result = "Ваше повідомлення відправлено";
+      echo json_encode($result);
+      
+      $c = true;
+
+      $project_name = trim($_POST["project_name"]);
+      $admin_email  = trim($_POST["admin_email"]);
+      $form_subject = trim($_POST["form_subject"]);
+
+      foreach ( $_POST as $key => $value ) {
+        if ( $value != "" && $key != "project_name" && $key != "admin_email" && $key != "form_subject" ) {
+          $message .= "
+          " . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "
+            <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$key</b></td>
+            <td style='padding: 10px; border: #e9e9e9 1px solid;'>$value</td>
+          </tr>
+          ";
+        }
+      }
+
+      $message = "<table style='width: 100%;'>$message</table>";
+
+      function adopt($text) {
+        return '=?UTF-8?B?'.Base64_encode($text).'?=';
+      }
+
+      $headers = "MIME-Version: 1.0" . PHP_EOL .
+      "Content-Type: text/html; charset=utf-8" . PHP_EOL .
+      'From: '.adopt($project_name).' <'.$admin_email.'>' . PHP_EOL .
+      'Reply-To: '.$admin_email.'' . PHP_EOL;
+
+      mail($admin_email, adopt($form_subject), $message, $headers );
+
+    } else {
+      $result = "Введені дані некоректні";
+      echo json_encode($result);
+    }
+
+    
+
+  }
+
+// мои примеры
+  // echo $_POST['name'] . ", " . $_POST['email'] . ", " . $_POST['phone'];
+
+  // $formSend['name'] = $_POST['name'];
+  // $formSend['email'] = $_POST['email'];
+  // $formSend['phone'] = $_POST['phone'];
+
+  // echo json_encode($formSend);
+
+  // echo $_POST['name'] . ", " . $_POST['email'] . ", " . $_POST['phone'];
+
+?>

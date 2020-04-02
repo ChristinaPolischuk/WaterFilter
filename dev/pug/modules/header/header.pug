@@ -4,10 +4,11 @@ header.header#header
       include ../../components/logo
     .header-main
       .header-main__img
-        picture
-          source(type="image/webp" srcset="img/5classic@2x.webp 1x, srcset=img/5classic@3x.webp 2x")
-          img(src="img/5classic@2x.png" srcset="img/5classic@3x.png 3x" alt="5 ступеневий зворотній осмос")
+        img(src="img/5classic.png" srcset="img/5classic@2x.png 2x" alt="5 ступеневий зворотній осмос")
+        //- picture
+        //-   source(type="image/webp" srcset="img/5classic.webp 1x, srcset=img/5classic@2x.webp 2x")
+        //-   img(src="img/5classic.png" srcset="img/5classic@2x.png 2x" alt="5 ступеневий зворотній осмос")
         .header-main__price 2 999 грн
       .header-main__order
         include ../../components/popup
-        include ../../components/header-form.php
+        include ../../components/header-form.pug

@@ -2,7 +2,10 @@
   .form-title__wrap
     .form-title Замовити
     .form-title Замовити
-  form(method="post" action="send.php")
+  form#send_order
+    input(type="hidden", name="PanFiltron", value="https://shop.panfiltron.com.ua/")
+    input(type="hidden", name="admin_email", value="senyqy@gmail.com")
+    input(type="hidden", name="form_subject", value="Замовлення з сайту Пан Фільтрон")
     .form-group
       input#name(type="text", name="name")
       label(for="name")
@@ -46,5 +49,7 @@
       .form-group__error
     .form-submit-btn-wrapper
       //- input.form-submit-btn(type="button", name="" value="Відправити")
-      button.form-submit-btn(type="submit")
+      button#send.form-submit-btn(type="submit")
+        span.form-submit-btn__text Відправити
         <svg class="liquid-button"></svg>
+    .result

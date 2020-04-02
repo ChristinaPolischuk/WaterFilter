@@ -65,6 +65,19 @@ gulp.task("pug", function () {
     );
 });
 
+// gulp.task('pug', function () {
+//   return gulp.src("dev/pug/index.pug")
+//     .pipe(pug())
+//     .pipe(rename(function (path) {
+//       path.extname = ".php"
+//     }))
+//     .pipe(gulp.dest("build/"))
+//     .pipe(browserSync.reload({
+//       stream: true
+//     }));
+
+// });
+
 gulp.task("php", function () {
   return gulp
     .src("dev/send.php")
